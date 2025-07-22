@@ -1,5 +1,5 @@
 {
-  "name": "my-turborepo",
+  "name": "home-store",
   "version": "0.0.0",
   "private": true,
   "description": "",
@@ -14,8 +14,8 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@hs/eslint-config": "workspace:*",
+    "@hs/typescript-config": "workspace:*",
     "prettier": "^3.2.5",
     "turbo": "^2.5.5"
   },

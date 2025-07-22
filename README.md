@@ -1,4 +1,4 @@
-# Turborepo starter
+# Home Store
 
 This is a community-maintained example. If you experience a problem, please submit a pull request with a fix. GitHub Issues will be closed.
 
@@ -21,11 +21,11 @@ This Turborepo includes the following packages/apps:
     │   ├── api                       # NestJS app (https://nestjs.com).
     │   └── web                       # Next.js app (https://nextjs.org).
     └── packages
-        ├── @repo/api                 # Shared `NestJS` resources.
-        ├── @repo/eslint-config       # `eslint` configurations (includes `prettier`)
-        ├── @repo/jest-config         # `jest` configurations
-        ├── @repo/typescript-config   # `tsconfig.json`s used throughout the monorepo
-        └── @repo/ui                  # Shareable stub React component library.
+        ├── @hs/api                 # Shared `NestJS` resources.
+        ├── @hs/eslint-config       # `eslint` configurations (includes `prettier`)
+        ├── @hs/jest-config         # `jest` configurations
+        ├── @hs/typescript-config   # `tsconfig.json`s used throughout the monorepo
+        └── @hs/ui                  # Shareable stub React component library.
 
 Each package and application are 100% [TypeScript](https://www.typescriptlang.org/) safe.
 
@@ -68,14 +68,14 @@ pnpm run test
 # You can launch e2e testes with `test:e2e`
 pnpm run test:e2e
 
-# See `@repo/jest-config` to customize the behavior.
+# See `@hs/jest-config` to customize the behavior.
 ```
 
 #### Lint
 
 ```bash
 # Will lint all the app & packages with the supported `lint` script.
-# See `@repo/eslint-config` to customize the behavior.
+# See `@hs/eslint-config` to customize the behavior.
 pnpm run lint
 ```
 
@@ -83,7 +83,7 @@ pnpm run lint
 
 ```bash
 # Will format all the supported `.ts,.js,json,.tsx,.jsx` files.
-# See `@repo/eslint-config/prettier-base.js` to customize the behavior.
+# See `@hs/eslint-config/prettier-base.js` to customize the behavior.
 pnpm format
 ```
 
