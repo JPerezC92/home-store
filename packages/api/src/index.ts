@@ -1,7 +1,6 @@
-import { Link } from 'links/entities/link.entity';
-
-import { CreateLinkDto } from 'links/dto/create-link.dto';
-import { UpdateLinkDto } from 'links/dto/update-link.dto';
+import { CreateLinkDto } from 'links/dto/create-link.dto'
+import { UpdateLinkDto } from 'links/dto/update-link.dto'
+import { Link } from 'links/entities/link.entity'
 
 export const links = {
   dto: {
@@ -11,4 +10,4 @@ export const links = {
   entities: {
     Link,
   },
-};
+}
