@@ -12,11 +12,15 @@
     "test:e2e": "turbo run test:e2e",
     "lint": "turbo run lint",
     "format-and-lint": "biome check .",
-    "format-and-lint:fix": "biome check . --write"
+    "format-and-lint:fix": "biome check . --write",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@biomejs/biome": "2.1.2",
+    "@commitlint/cli": "19.8.1",
+    "@commitlint/config-conventional": "19.8.1",
     "@hs/typescript-config": "workspace:*",
+    "husky": "9.1.7",
     "turbo": "^2.5.5"
   },
   "packageManager": "pnpm@8.15.5",
