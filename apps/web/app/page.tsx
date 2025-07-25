@@ -1,22 +1,20 @@
-import { Suspense } from 'react';
-import Image from 'next/image';
+import { Link } from '@hs/api/links/entities/link.entity'
+import { Button } from '@hs/ui/button'
+import { Card } from '@hs/ui/card'
+import { Code } from '@hs/ui/code'
+import Image from 'next/image'
+import { Suspense } from 'react'
 
-import { Link } from '@hs/api/links/entities/link.entity';
-
-import { Card } from '@hs/ui/card';
-import { Code } from '@hs/ui/code';
-import { Button } from '@hs/ui/button';
-
-import styles from './page.module.css';
+import styles from './page.module.css'
 
 const Gradient = ({
   conic,
   className,
   small,
 }: Readonly<{
-  small?: boolean;
-  conic?: boolean;
-  className?: string;
+  small?: boolean
+  conic?: boolean
+  className?: string
 }>) => {
   return (
     <span
@@ -29,19 +27,19 @@ const Gradient = ({
         .filter(Boolean)
         .join(' ')}
     />
-  );
-};
+  )
+}
 
 const LinksSection = async () => {
   const fetchLinks = async (): Promise<Link[]> => {
     try {
-      return await (await fetch('http://localhost:3000/links')).json();
+      return await (await fetch('http://localhost:3000/links')).json()
     } catch (_) {
-      return [];
+      return []
     }
-  };
+  }
 
-  const links = await fetchLinks();
+  const links = await fetchLinks()
 
   return (
     <div className={styles.grid}>
@@ -51,8 +49,8 @@ const LinksSection = async () => {
         </Card>
       ))}
     </div>
-  );
-};
+  )
+}
 
 const LinksSectionForTest = () => {
   return (
@@ -61,8 +59,8 @@ const LinksSectionForTest = () => {
         description
       </Card>
     </div>
-  );
-};
+  )
+}
 
 const RootPage = ({ params }: { params: { forTest?: boolean } }) => {
   return (
@@ -158,7 +156,7 @@ const RootPage = ({ params }: { params: { forTest?: boolean } }) => {
         <Suspense fallback={'Loading links...'}>{<LinksSection />}</Suspense>
       )}
     </main>
-  );
-};
+  )
+}
 
-export default RootPage;
+export default RootPage

@@ -29,6 +29,7 @@ playwright-report/
 
 # Build Outputs
 .next/
+.swc/
 out/
 build
 dist
