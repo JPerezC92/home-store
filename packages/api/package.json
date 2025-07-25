@@ -6,21 +6,17 @@
   "scripts": {
     "dev": "pnpm build --watch",
     "build": "tsc -b -v",
-    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\""
+    "lint": "biome lint ."
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": [
-    "./dist/**"
-  ],
+  "files": ["./dist/**"],
   "publishConfig": {
     "access": "public"
   },
   "typesVersions": {
     "*": {
-      "*": [
-        "src/*"
-      ]
+      "*": ["src/*"]
     }
   },
   "exports": {
@@ -37,7 +33,6 @@
     "@nestjs/mapped-types": "*"
   },
   "devDependencies": {
-    "@hs/eslint-config": "workspace:*",
     "@hs/typescript-config": "workspace:*",
     "@types/node": "^20.3.1",
     "ts-loader": "^9.4.3",

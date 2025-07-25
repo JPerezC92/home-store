@@ -22,7 +22,6 @@ This Turborepo includes the following packages/apps:
     │   └── web                       # Next.js app (https://nextjs.org).
     └── packages
         ├── @hs/api                 # Shared `NestJS` resources.
-        ├── @hs/eslint-config       # `eslint` configurations (includes `prettier`)
         ├── @hs/jest-config         # `jest` configurations
         ├── @hs/typescript-config   # `tsconfig.json`s used throughout the monorepo
         └── @hs/ui                  # Shareable stub React component library.
@@ -34,9 +33,8 @@ Each package and application are 100% [TypeScript](https://www.typescriptlang.or
 This `Turborepo` has some additional tools already set for you:
 
 - [TypeScript](https://www.typescriptlang.org/) for static type-safety
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-- [Jest](https://prettier.io) & [Playwright](https://playwright.dev/) for testing
+- [Biome](https://biomejs.dev/) for code formatting and linting
+- [Jest](https://jestjs.io) & [Playwright](https://playwright.dev/) for testing
 
 ### Commands
 
@@ -75,7 +73,6 @@ pnpm run test:e2e
 
 ```bash
 # Will lint all the app & packages with the supported `lint` script.
-# See `@hs/eslint-config` to customize the behavior.
 pnpm run lint
 ```
 
@@ -83,7 +80,6 @@ pnpm run lint
 
 ```bash
 # Will format all the supported `.ts,.js,json,.tsx,.jsx` files.
-# See `@hs/eslint-config/prettier-base.js` to customize the behavior.
 pnpm format
 ```
 
