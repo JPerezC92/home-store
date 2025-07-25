@@ -19,10 +19,6 @@
     },
     "lint": {},
     "test": {},
-    "test:e2e": {},
-    "//#format-and-lint": {},
-    "//#format-and-lint:fix": {
-      "cache": false
-    }
+    "test:e2e": {}
   }
 }

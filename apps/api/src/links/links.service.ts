@@ -1,7 +1,9 @@
-import { CreateLinkDto } from '@hs/api/links/dto/create-link.dto'
-import { UpdateLinkDto } from '@hs/api/links/dto/update-link.dto'
-import { Link } from '@hs/api/links/entities/link.entity'
-import { Injectable } from '@nestjs/common'
+import { Injectable } from '@nestjs/common';
+
+import { Link } from '@hs/api/links/entities/link.entity';
+
+import { CreateLinkDto } from '@hs/api/links/dto/create-link.dto';
+import { UpdateLinkDto } from '@hs/api/links/dto/update-link.dto';
 
 @Injectable()
 export class LinksService {
@@ -33,25 +35,25 @@ export class LinksService {
       description:
         'Instantly deploy your Turborepo to a shareable URL with Vercel.',
     },
-  ]
+  ];
 
   create(createLinkDto: CreateLinkDto) {
-    return `This action adds a new link ${createLinkDto}`
+    return `This action adds a new link ${createLinkDto}`;
   }
 
   findAll() {
-    return this._links
+    return this._links;
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} link`
+    return `This action returns a #${id} link`;
   }
 
   update(id: number, updateLinkDto: UpdateLinkDto) {
-    return `This action updates a #${id} link ${updateLinkDto}`
+    return `This action updates a #${id} link ${updateLinkDto}`;
   }
 
   remove(id: number) {
-    return `This action removes a #${id} link`
+    return `This action removes a #${id} link`;
   }
 }

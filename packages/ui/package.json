@@ -8,10 +8,11 @@
     "./code": "./src/code.tsx"
   },
   "scripts": {
-    "lint": "biome lint .",
+    "lint": "eslint . --max-warnings 0",
     "generate:component": "turbo gen react-component"
   },
   "devDependencies": {
+    "@hs/eslint-config": "workspace:*",
     "@hs/typescript-config": "workspace:*",
     "@turbo/gen": "^1.12.4",
     "@types/node": "^20.11.24",

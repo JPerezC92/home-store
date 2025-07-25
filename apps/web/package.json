@@ -6,7 +6,7 @@
     "dev": "next dev --port 3001",
     "build": "next build",
     "start": "next start",
-    "lint": "biome lint .",
+    "lint": "eslint . --max-warnings 0",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:e2e": "playwright test"
@@ -22,6 +22,7 @@
     "@next/eslint-plugin-next": "^14.1.1",
     "@playwright/test": "^1.44.0",
     "@hs/api": "workspace:*",
+    "@hs/eslint-config": "workspace:*",
     "@hs/jest-config": "workspace:*",
     "@hs/typescript-config": "workspace:*",
     "@testing-library/jest-dom": "^6.4.5",
