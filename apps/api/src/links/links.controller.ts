@@ -1,5 +1,5 @@
-import { CreateLinkDto } from '@hs/api/links/dto/create-link.dto'
-import { UpdateLinkDto } from '@hs/api/links/dto/update-link.dto'
+import { CreateLinkDto } from "@hs/api/links/dto/create-link.dto";
+import { UpdateLinkDto } from "@hs/api/links/dto/update-link.dto";
 import {
 	Body,
 	Controller,
@@ -8,36 +8,36 @@ import {
 	Param,
 	Patch,
 	Post,
-} from '@nestjs/common'
+} from "@nestjs/common";
 
-import { LinksService } from './links.service'
+import { LinksService } from "./links.service";
 
-@Controller('links')
+@Controller("links")
 export class LinksController {
 	constructor(private readonly linksService: LinksService) {}
 
 	@Post()
-	create(@Body() createLinkDto: CreateLinkDto) {
-		return this.linksService.create(createLinkDto)
+	async create(@Body() createLinkDto: CreateLinkDto) {
+		return this.linksService.create(createLinkDto);
 	}
 
 	@Get()
 	findAll() {
-		return this.linksService.findAll()
+		return this.linksService.findAll();
 	}
 
-	@Get(':id')
-	findOne(@Param('id') id: string) {
-		return this.linksService.findOne(+id)
+	@Get(":id")
+	findOne(@Param("id") id: string) {
+		return this.linksService.findOne(+id);
 	}
 
-	@Patch(':id')
-	update(@Param('id') id: string, @Body() updateLinkDto: UpdateLinkDto) {
-		return this.linksService.update(+id, updateLinkDto)
+	@Patch(":id")
+	update(@Param("id") id: string, @Body() updateLinkDto: UpdateLinkDto) {
+		return this.linksService.update(+id, updateLinkDto);
 	}
 
-	@Delete(':id')
-	remove(@Param('id') id: string) {
-		return this.linksService.remove(+id)
+	@Delete(":id")
+	remove(@Param("id") id: string) {
+		return this.linksService.remove(+id);
 	}
 }

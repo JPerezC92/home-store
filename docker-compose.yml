@@ -1,0 +1,23 @@
+services:
+  db:
+    container_name: dev-db
+    image: postgres:17.5
+    restart: always
+    environment:
+      POSTGRES_DB: home-store-dev
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - '5432:5432'
+
+  db-test:
+    container_name: test-db
+    image: postgres:17.5
+    restart: always
+    environment:
+      POSTGRES_DB: home-store-test
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - '5433:5433'
+    expose:
+    - "5433"
+    command: -p 5433

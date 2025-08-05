@@ -1,0 +1,42 @@
+generator client {
+    provider = "prisma-client"
+    output   = "../src/database/infrastructure/prisma"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model PaymentMethodDB {
+    payment_method_id String      @id @default(uuid())
+    name              String
+    created_at        DateTime    @default(now())
+    updated_at        DateTime    @updatedAt
+    IncomeDB          IncomeDB[]
+    ExpenseDB         ExpenseDB[]
+
+    @@map("payment_method")
+}
+
+model IncomeDB {
+    income_id         String          @id @default(uuid())
+    amount            Int
+    created_at        DateTime        @default(now())
+    updated_at        DateTime        @updatedAt
+    payment_method_id String
+    PaymentMethodDB   PaymentMethodDB @relation(fields: [payment_method_id], references: [payment_method_id])
+
+    @@map("income")
+}
+
+model ExpenseDB {
+    expense_id        String          @id @default(uuid())
+    amount            Int
+    created_at        DateTime        @default(now())
+    updated_at        DateTime        @updatedAt
+    payment_method_id String
+    PaymentMethodDB   PaymentMethodDB @relation(fields: [payment_method_id], references: [payment_method_id])
+
+    @@map("expense")
+}

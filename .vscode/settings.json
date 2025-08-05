@@ -4,5 +4,12 @@
 	"editor.codeActionsOnSave": {
 		"source.organizeImports.biome": "explicit",
 		"source.fixAll.biome": "explicit"
+	},
+	"workbench.colorCustomizations": {
+		"tree.indentGuidesStroke": "#9048d3"
+	},
+	"workbench.tree.indent": 16,
+	"[prisma]": {
+		"editor.defaultFormatter": "Prisma.prisma"
 	}
 }
