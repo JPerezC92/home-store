@@ -9,13 +9,16 @@ datasource db {
 }
 
 model PaymentMethodDB {
-    payment_method_id String      @id @default(uuid())
-    name              String
+    payment_method_id String      @default(uuid())
+    name              String      @unique
+    active            Boolean     @default(false)
     created_at        DateTime    @default(now())
     updated_at        DateTime    @updatedAt
     IncomeDB          IncomeDB[]
     ExpenseDB         ExpenseDB[]
 
+    @@id([payment_method_id])
+    @@index([name, active])
     @@map("payment_method")
 }
 
