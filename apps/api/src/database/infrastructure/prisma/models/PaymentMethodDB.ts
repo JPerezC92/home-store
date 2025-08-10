@@ -26,6 +26,7 @@ export type AggregatePaymentMethodDB = {
 export type PaymentMethodDBMinAggregateOutputType = {
   payment_method_id: string | null
   name: string | null
+  active: boolean | null
   created_at: Date | null
   updated_at: Date | null
 }
@@ -33,6 +34,7 @@ export type PaymentMethodDBMinAggregateOutputType = {
 export type PaymentMethodDBMaxAggregateOutputType = {
   payment_method_id: string | null
   name: string | null
+  active: boolean | null
   created_at: Date | null
   updated_at: Date | null
 }
@@ -40,6 +42,7 @@ export type PaymentMethodDBMaxAggregateOutputType = {
 export type PaymentMethodDBCountAggregateOutputType = {
   payment_method_id: number
   name: number
+  active: number
   created_at: number
   updated_at: number
   _all: number
@@ -49,6 +52,7 @@ export type PaymentMethodDBCountAggregateOutputType = {
 export type PaymentMethodDBMinAggregateInputType = {
   payment_method_id?: true
   name?: true
+  active?: true
   created_at?: true
   updated_at?: true
 }
@@ -56,6 +60,7 @@ export type PaymentMethodDBMinAggregateInputType = {
 export type PaymentMethodDBMaxAggregateInputType = {
   payment_method_id?: true
   name?: true
+  active?: true
   created_at?: true
   updated_at?: true
 }
@@ -63,6 +68,7 @@ export type PaymentMethodDBMaxAggregateInputType = {
 export type PaymentMethodDBCountAggregateInputType = {
   payment_method_id?: true
   name?: true
+  active?: true
   created_at?: true
   updated_at?: true
   _all?: true
@@ -143,6 +149,7 @@ export type PaymentMethodDBGroupByArgs<ExtArgs extends runtime.Types.Extensions.
 export type PaymentMethodDBGroupByOutputType = {
   payment_method_id: string
   name: string
+  active: boolean
   created_at: Date
   updated_at: Date
   _count: PaymentMethodDBCountAggregateOutputType | null
@@ -171,6 +178,7 @@ export type PaymentMethodDBWhereInput = {
   NOT?: Prisma.PaymentMethodDBWhereInput | Prisma.PaymentMethodDBWhereInput[]
   payment_method_id?: Prisma.StringFilter<"PaymentMethodDB"> | string
   name?: Prisma.StringFilter<"PaymentMethodDB"> | string
+  active?: Prisma.BoolFilter<"PaymentMethodDB"> | boolean
   created_at?: Prisma.DateTimeFilter<"PaymentMethodDB"> | Date | string
   updated_at?: Prisma.DateTimeFilter<"PaymentMethodDB"> | Date | string
   IncomeDB?: Prisma.IncomeDBListRelationFilter
@@ -180,6 +188,7 @@ export type PaymentMethodDBWhereInput = {
 export type PaymentMethodDBOrderByWithRelationInput = {
   payment_method_id?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  active?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
   IncomeDB?: Prisma.IncomeDBOrderByRelationAggregateInput
@@ -188,19 +197,21 @@ export type PaymentMethodDBOrderByWithRelationInput = {
 
 export type PaymentMethodDBWhereUniqueInput = Prisma.AtLeast<{
   payment_method_id?: string
+  name?: string
   AND?: Prisma.PaymentMethodDBWhereInput | Prisma.PaymentMethodDBWhereInput[]
   OR?: Prisma.PaymentMethodDBWhereInput[]
   NOT?: Prisma.PaymentMethodDBWhereInput | Prisma.PaymentMethodDBWhereInput[]
-  name?: Prisma.StringFilter<"PaymentMethodDB"> | string
+  active?: Prisma.BoolFilter<"PaymentMethodDB"> | boolean
   created_at?: Prisma.DateTimeFilter<"PaymentMethodDB"> | Date | string
   updated_at?: Prisma.DateTimeFilter<"PaymentMethodDB"> | Date | string
   IncomeDB?: Prisma.IncomeDBListRelationFilter
   ExpenseDB?: Prisma.ExpenseDBListRelationFilter
-}, "payment_method_id">
+}, "payment_method_id" | "name">
 
 export type PaymentMethodDBOrderByWithAggregationInput = {
   payment_method_id?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  active?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
   _count?: Prisma.PaymentMethodDBCountOrderByAggregateInput
@@ -214,6 +225,7 @@ export type PaymentMethodDBScalarWhereWithAggregatesInput = {
   NOT?: Prisma.PaymentMethodDBScalarWhereWithAggregatesInput | Prisma.PaymentMethodDBScalarWhereWithAggregatesInput[]
   payment_method_id?: Prisma.StringWithAggregatesFilter<"PaymentMethodDB"> | string
   name?: Prisma.StringWithAggregatesFilter<"PaymentMethodDB"> | string
+  active?: Prisma.BoolWithAggregatesFilter<"PaymentMethodDB"> | boolean
   created_at?: Prisma.DateTimeWithAggregatesFilter<"PaymentMethodDB"> | Date | string
   updated_at?: Prisma.DateTimeWithAggregatesFilter<"PaymentMethodDB"> | Date | string
 }
@@ -221,6 +233,7 @@ export type PaymentMethodDBScalarWhereWithAggregatesInput = {
 export type PaymentMethodDBCreateInput = {
   payment_method_id?: string
   name: string
+  active?: boolean
   created_at?: Date | string
   updated_at?: Date | string
   IncomeDB?: Prisma.IncomeDBCreateNestedManyWithoutPaymentMethodDBInput
@@ -230,6 +243,7 @@ export type PaymentMethodDBCreateInput = {
 export type PaymentMethodDBUncheckedCreateInput = {
   payment_method_id?: string
   name: string
+  active?: boolean
   created_at?: Date | string
   updated_at?: Date | string
   IncomeDB?: Prisma.IncomeDBUncheckedCreateNestedManyWithoutPaymentMethodDBInput
@@ -239,6 +253,7 @@ export type PaymentMethodDBUncheckedCreateInput = {
 export type PaymentMethodDBUpdateInput = {
   payment_method_id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  active?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   IncomeDB?: Prisma.IncomeDBUpdateManyWithoutPaymentMethodDBNestedInput
@@ -248,6 +263,7 @@ export type PaymentMethodDBUpdateInput = {
 export type PaymentMethodDBUncheckedUpdateInput = {
   payment_method_id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  active?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   IncomeDB?: Prisma.IncomeDBUncheckedUpdateManyWithoutPaymentMethodDBNestedInput
@@ -257,6 +273,7 @@ export type PaymentMethodDBUncheckedUpdateInput = {
 export type PaymentMethodDBCreateManyInput = {
   payment_method_id?: string
   name: string
+  active?: boolean
   created_at?: Date | string
   updated_at?: Date | string
 }
@@ -264,6 +281,7 @@ export type PaymentMethodDBCreateManyInput = {
 export type PaymentMethodDBUpdateManyMutationInput = {
   payment_method_id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  active?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -271,6 +289,7 @@ export type PaymentMethodDBUpdateManyMutationInput = {
 export type PaymentMethodDBUncheckedUpdateManyInput = {
   payment_method_id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  active?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -278,6 +297,7 @@ export type PaymentMethodDBUncheckedUpdateManyInput = {
 export type PaymentMethodDBCountOrderByAggregateInput = {
   payment_method_id?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  active?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
 }
@@ -285,6 +305,7 @@ export type PaymentMethodDBCountOrderByAggregateInput = {
 export type PaymentMethodDBMaxOrderByAggregateInput = {
   payment_method_id?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  active?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
 }
@@ -292,6 +313,7 @@ export type PaymentMethodDBMaxOrderByAggregateInput = {
 export type PaymentMethodDBMinOrderByAggregateInput = {
   payment_method_id?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  active?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
 }
@@ -303,6 +325,10 @@ export type PaymentMethodDBScalarRelationFilter = {
 
 export type StringFieldUpdateOperationsInput = {
   set?: string
+}
+
+export type BoolFieldUpdateOperationsInput = {
+  set?: boolean
 }
 
 export type DateTimeFieldUpdateOperationsInput = {
@@ -340,6 +366,7 @@ export type PaymentMethodDBUpdateOneRequiredWithoutExpenseDBNestedInput = {
 export type PaymentMethodDBCreateWithoutIncomeDBInput = {
   payment_method_id?: string
   name: string
+  active?: boolean
   created_at?: Date | string
   updated_at?: Date | string
   ExpenseDB?: Prisma.ExpenseDBCreateNestedManyWithoutPaymentMethodDBInput
@@ -348,6 +375,7 @@ export type PaymentMethodDBCreateWithoutIncomeDBInput = {
 export type PaymentMethodDBUncheckedCreateWithoutIncomeDBInput = {
   payment_method_id?: string
   name: string
+  active?: boolean
   created_at?: Date | string
   updated_at?: Date | string
   ExpenseDB?: Prisma.ExpenseDBUncheckedCreateNestedManyWithoutPaymentMethodDBInput
@@ -372,6 +400,7 @@ export type PaymentMethodDBUpdateToOneWithWhereWithoutIncomeDBInput = {
 export type PaymentMethodDBUpdateWithoutIncomeDBInput = {
   payment_method_id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  active?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   ExpenseDB?: Prisma.ExpenseDBUpdateManyWithoutPaymentMethodDBNestedInput
@@ -380,6 +409,7 @@ export type PaymentMethodDBUpdateWithoutIncomeDBInput = {
 export type PaymentMethodDBUncheckedUpdateWithoutIncomeDBInput = {
   payment_method_id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  active?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   ExpenseDB?: Prisma.ExpenseDBUncheckedUpdateManyWithoutPaymentMethodDBNestedInput
@@ -388,6 +418,7 @@ export type PaymentMethodDBUncheckedUpdateWithoutIncomeDBInput = {
 export type PaymentMethodDBCreateWithoutExpenseDBInput = {
   payment_method_id?: string
   name: string
+  active?: boolean
   created_at?: Date | string
   updated_at?: Date | string
   IncomeDB?: Prisma.IncomeDBCreateNestedManyWithoutPaymentMethodDBInput
@@ -396,6 +427,7 @@ export type PaymentMethodDBCreateWithoutExpenseDBInput = {
 export type PaymentMethodDBUncheckedCreateWithoutExpenseDBInput = {
   payment_method_id?: string
   name: string
+  active?: boolean
   created_at?: Date | string
   updated_at?: Date | string
   IncomeDB?: Prisma.IncomeDBUncheckedCreateNestedManyWithoutPaymentMethodDBInput
@@ -420,6 +452,7 @@ export type PaymentMethodDBUpdateToOneWithWhereWithoutExpenseDBInput = {
 export type PaymentMethodDBUpdateWithoutExpenseDBInput = {
   payment_method_id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  active?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   IncomeDB?: Prisma.IncomeDBUpdateManyWithoutPaymentMethodDBNestedInput
@@ -428,6 +461,7 @@ export type PaymentMethodDBUpdateWithoutExpenseDBInput = {
 export type PaymentMethodDBUncheckedUpdateWithoutExpenseDBInput = {
   payment_method_id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  active?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   IncomeDB?: Prisma.IncomeDBUncheckedUpdateManyWithoutPaymentMethodDBNestedInput
@@ -476,6 +510,7 @@ export type PaymentMethodDBCountOutputTypeCountExpenseDBArgs<ExtArgs extends run
 export type PaymentMethodDBSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   payment_method_id?: boolean
   name?: boolean
+  active?: boolean
   created_at?: boolean
   updated_at?: boolean
   IncomeDB?: boolean | Prisma.PaymentMethodDB$IncomeDBArgs<ExtArgs>
@@ -486,6 +521,7 @@ export type PaymentMethodDBSelect<ExtArgs extends runtime.Types.Extensions.Inter
 export type PaymentMethodDBSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   payment_method_id?: boolean
   name?: boolean
+  active?: boolean
   created_at?: boolean
   updated_at?: boolean
 }, ExtArgs["result"]["paymentMethodDB"]>
@@ -493,6 +529,7 @@ export type PaymentMethodDBSelectCreateManyAndReturn<ExtArgs extends runtime.Typ
 export type PaymentMethodDBSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   payment_method_id?: boolean
   name?: boolean
+  active?: boolean
   created_at?: boolean
   updated_at?: boolean
 }, ExtArgs["result"]["paymentMethodDB"]>
@@ -500,11 +537,12 @@ export type PaymentMethodDBSelectUpdateManyAndReturn<ExtArgs extends runtime.Typ
 export type PaymentMethodDBSelectScalar = {
   payment_method_id?: boolean
   name?: boolean
+  active?: boolean
   created_at?: boolean
   updated_at?: boolean
 }
 
-export type PaymentMethodDBOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"payment_method_id" | "name" | "created_at" | "updated_at", ExtArgs["result"]["paymentMethodDB"]>
+export type PaymentMethodDBOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"payment_method_id" | "name" | "active" | "created_at" | "updated_at", ExtArgs["result"]["paymentMethodDB"]>
 export type PaymentMethodDBInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   IncomeDB?: boolean | Prisma.PaymentMethodDB$IncomeDBArgs<ExtArgs>
   ExpenseDB?: boolean | Prisma.PaymentMethodDB$ExpenseDBArgs<ExtArgs>
@@ -522,6 +560,7 @@ export type $PaymentMethodDBPayload<ExtArgs extends runtime.Types.Extensions.Int
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     payment_method_id: string
     name: string
+    active: boolean
     created_at: Date
     updated_at: Date
   }, ExtArgs["result"]["paymentMethodDB"]>
@@ -951,6 +990,7 @@ export interface Prisma__PaymentMethodDBClient<T, Null = never, ExtArgs extends 
 export interface PaymentMethodDBFieldRefs {
   readonly payment_method_id: Prisma.FieldRef<"PaymentMethodDB", 'String'>
   readonly name: Prisma.FieldRef<"PaymentMethodDB", 'String'>
+  readonly active: Prisma.FieldRef<"PaymentMethodDB", 'Boolean'>
   readonly created_at: Prisma.FieldRef<"PaymentMethodDB", 'DateTime'>
   readonly updated_at: Prisma.FieldRef<"PaymentMethodDB", 'DateTime'>
 }

@@ -1,15 +1,14 @@
-import { patchNestjsSwagger, ZodValidationPipe } from "@anatine/zod-nestjs";
 import { NestFactory } from "@nestjs/core";
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
 
 import { AppModule } from "./app.module";
+import { ClassValidatorPipe } from "./shared/infrastructure/pipes/classValidator.pipe";
 
 async function bootstrap() {
 	const app = await NestFactory.create(AppModule);
 	const globalPrefix = "api";
 
-	app.useGlobalPipes(new ZodValidationPipe());
-
+	app.useGlobalPipes(new ClassValidatorPipe());
 	app.setGlobalPrefix(globalPrefix);
 
 	const config = new DocumentBuilder()
@@ -18,8 +17,6 @@ async function bootstrap() {
 		.setVersion("1.0")
 		.addTag("cats")
 		.build();
-
-	patchNestjsSwagger(); // <--- This is the hacky patch using prototypes (for now)
 
 	const document = SwaggerModule.createDocument(app, config);
 

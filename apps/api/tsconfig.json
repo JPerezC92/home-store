@@ -1,11 +1,14 @@
 {
 	"extends": "@hs/typescript-config/nestjs.json",
 	"compilerOptions": {
+		"strictNullChecks": true,
+		"strictPropertyInitialization": false,
 		"baseUrl": "./",
 		"outDir": "./dist",
 		"paths": {
+			"#payment/*": ["./src/payment/*"],
 			"#database/*": ["./src/database/*"],
-			"@hs/api": ["./src"]
+			"#shared/*": ["./src/shared/*"]
 		}
 	}
 }
