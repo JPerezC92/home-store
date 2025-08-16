@@ -6,7 +6,12 @@
 		"source.fixAll.biome": "explicit"
 	},
 	"workbench.colorCustomizations": {
-		"tree.indentGuidesStroke": "#9048d3"
+		"tree.inactiveIndentGuidesStroke": "#14dfee4d",
+		"tree.indentGuidesStroke": "#a255ebc7",
+		"[Catppuccin Macchiato]": {
+			"tree.inactiveIndentGuidesStroke": "#14dfee4d",
+			"tree.indentGuidesStroke": "#a255ebc7"
+		}
 	},
 	"workbench.tree.indent": 16,
 	"[prisma]": {

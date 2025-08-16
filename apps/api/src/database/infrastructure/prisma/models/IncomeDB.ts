@@ -36,6 +36,9 @@ export type IncomeDBSumAggregateOutputType = {
 export type IncomeDBMinAggregateOutputType = {
   income_id: string | null
   amount: number | null
+  sender_name: string | null
+  payment_note: string | null
+  transaction_date: Date | null
   created_at: Date | null
   updated_at: Date | null
   payment_method_id: string | null
@@ -44,6 +47,9 @@ export type IncomeDBMinAggregateOutputType = {
 export type IncomeDBMaxAggregateOutputType = {
   income_id: string | null
   amount: number | null
+  sender_name: string | null
+  payment_note: string | null
+  transaction_date: Date | null
   created_at: Date | null
   updated_at: Date | null
   payment_method_id: string | null
@@ -52,6 +58,9 @@ export type IncomeDBMaxAggregateOutputType = {
 export type IncomeDBCountAggregateOutputType = {
   income_id: number
   amount: number
+  sender_name: number
+  payment_note: number
+  transaction_date: number
   created_at: number
   updated_at: number
   payment_method_id: number
@@ -70,6 +79,9 @@ export type IncomeDBSumAggregateInputType = {
 export type IncomeDBMinAggregateInputType = {
   income_id?: true
   amount?: true
+  sender_name?: true
+  payment_note?: true
+  transaction_date?: true
   created_at?: true
   updated_at?: true
   payment_method_id?: true
@@ -78,6 +90,9 @@ export type IncomeDBMinAggregateInputType = {
 export type IncomeDBMaxAggregateInputType = {
   income_id?: true
   amount?: true
+  sender_name?: true
+  payment_note?: true
+  transaction_date?: true
   created_at?: true
   updated_at?: true
   payment_method_id?: true
@@ -86,6 +101,9 @@ export type IncomeDBMaxAggregateInputType = {
 export type IncomeDBCountAggregateInputType = {
   income_id?: true
   amount?: true
+  sender_name?: true
+  payment_note?: true
+  transaction_date?: true
   created_at?: true
   updated_at?: true
   payment_method_id?: true
@@ -181,6 +199,9 @@ export type IncomeDBGroupByArgs<ExtArgs extends runtime.Types.Extensions.Interna
 export type IncomeDBGroupByOutputType = {
   income_id: string
   amount: number
+  sender_name: string | null
+  payment_note: string | null
+  transaction_date: Date
   created_at: Date
   updated_at: Date
   payment_method_id: string
@@ -212,6 +233,9 @@ export type IncomeDBWhereInput = {
   NOT?: Prisma.IncomeDBWhereInput | Prisma.IncomeDBWhereInput[]
   income_id?: Prisma.StringFilter<"IncomeDB"> | string
   amount?: Prisma.IntFilter<"IncomeDB"> | number
+  sender_name?: Prisma.StringNullableFilter<"IncomeDB"> | string | null
+  payment_note?: Prisma.StringNullableFilter<"IncomeDB"> | string | null
+  transaction_date?: Prisma.DateTimeFilter<"IncomeDB"> | Date | string
   created_at?: Prisma.DateTimeFilter<"IncomeDB"> | Date | string
   updated_at?: Prisma.DateTimeFilter<"IncomeDB"> | Date | string
   payment_method_id?: Prisma.StringFilter<"IncomeDB"> | string
@@ -221,6 +245,9 @@ export type IncomeDBWhereInput = {
 export type IncomeDBOrderByWithRelationInput = {
   income_id?: Prisma.SortOrder
   amount?: Prisma.SortOrder
+  sender_name?: Prisma.SortOrderInput | Prisma.SortOrder
+  payment_note?: Prisma.SortOrderInput | Prisma.SortOrder
+  transaction_date?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
   payment_method_id?: Prisma.SortOrder
@@ -233,6 +260,9 @@ export type IncomeDBWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.IncomeDBWhereInput[]
   NOT?: Prisma.IncomeDBWhereInput | Prisma.IncomeDBWhereInput[]
   amount?: Prisma.IntFilter<"IncomeDB"> | number
+  sender_name?: Prisma.StringNullableFilter<"IncomeDB"> | string | null
+  payment_note?: Prisma.StringNullableFilter<"IncomeDB"> | string | null
+  transaction_date?: Prisma.DateTimeFilter<"IncomeDB"> | Date | string
   created_at?: Prisma.DateTimeFilter<"IncomeDB"> | Date | string
   updated_at?: Prisma.DateTimeFilter<"IncomeDB"> | Date | string
   payment_method_id?: Prisma.StringFilter<"IncomeDB"> | string
@@ -242,6 +272,9 @@ export type IncomeDBWhereUniqueInput = Prisma.AtLeast<{
 export type IncomeDBOrderByWithAggregationInput = {
   income_id?: Prisma.SortOrder
   amount?: Prisma.SortOrder
+  sender_name?: Prisma.SortOrderInput | Prisma.SortOrder
+  payment_note?: Prisma.SortOrderInput | Prisma.SortOrder
+  transaction_date?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
   payment_method_id?: Prisma.SortOrder
@@ -258,6 +291,9 @@ export type IncomeDBScalarWhereWithAggregatesInput = {
   NOT?: Prisma.IncomeDBScalarWhereWithAggregatesInput | Prisma.IncomeDBScalarWhereWithAggregatesInput[]
   income_id?: Prisma.StringWithAggregatesFilter<"IncomeDB"> | string
   amount?: Prisma.IntWithAggregatesFilter<"IncomeDB"> | number
+  sender_name?: Prisma.StringNullableWithAggregatesFilter<"IncomeDB"> | string | null
+  payment_note?: Prisma.StringNullableWithAggregatesFilter<"IncomeDB"> | string | null
+  transaction_date?: Prisma.DateTimeWithAggregatesFilter<"IncomeDB"> | Date | string
   created_at?: Prisma.DateTimeWithAggregatesFilter<"IncomeDB"> | Date | string
   updated_at?: Prisma.DateTimeWithAggregatesFilter<"IncomeDB"> | Date | string
   payment_method_id?: Prisma.StringWithAggregatesFilter<"IncomeDB"> | string
@@ -266,6 +302,9 @@ export type IncomeDBScalarWhereWithAggregatesInput = {
 export type IncomeDBCreateInput = {
   income_id?: string
   amount: number
+  sender_name?: string | null
+  payment_note?: string | null
+  transaction_date?: Date | string
   created_at?: Date | string
   updated_at?: Date | string
   PaymentMethodDB: Prisma.PaymentMethodDBCreateNestedOneWithoutIncomeDBInput
@@ -274,6 +313,9 @@ export type IncomeDBCreateInput = {
 export type IncomeDBUncheckedCreateInput = {
   income_id?: string
   amount: number
+  sender_name?: string | null
+  payment_note?: string | null
+  transaction_date?: Date | string
   created_at?: Date | string
   updated_at?: Date | string
   payment_method_id: string
@@ -282,6 +324,9 @@ export type IncomeDBUncheckedCreateInput = {
 export type IncomeDBUpdateInput = {
   income_id?: Prisma.StringFieldUpdateOperationsInput | string
   amount?: Prisma.IntFieldUpdateOperationsInput | number
+  sender_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  payment_note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  transaction_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   PaymentMethodDB?: Prisma.PaymentMethodDBUpdateOneRequiredWithoutIncomeDBNestedInput
@@ -290,6 +335,9 @@ export type IncomeDBUpdateInput = {
 export type IncomeDBUncheckedUpdateInput = {
   income_id?: Prisma.StringFieldUpdateOperationsInput | string
   amount?: Prisma.IntFieldUpdateOperationsInput | number
+  sender_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  payment_note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  transaction_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   payment_method_id?: Prisma.StringFieldUpdateOperationsInput | string
@@ -298,6 +346,9 @@ export type IncomeDBUncheckedUpdateInput = {
 export type IncomeDBCreateManyInput = {
   income_id?: string
   amount: number
+  sender_name?: string | null
+  payment_note?: string | null
+  transaction_date?: Date | string
   created_at?: Date | string
   updated_at?: Date | string
   payment_method_id: string
@@ -306,6 +357,9 @@ export type IncomeDBCreateManyInput = {
 export type IncomeDBUpdateManyMutationInput = {
   income_id?: Prisma.StringFieldUpdateOperationsInput | string
   amount?: Prisma.IntFieldUpdateOperationsInput | number
+  sender_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  payment_note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  transaction_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -313,6 +367,9 @@ export type IncomeDBUpdateManyMutationInput = {
 export type IncomeDBUncheckedUpdateManyInput = {
   income_id?: Prisma.StringFieldUpdateOperationsInput | string
   amount?: Prisma.IntFieldUpdateOperationsInput | number
+  sender_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  payment_note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  transaction_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   payment_method_id?: Prisma.StringFieldUpdateOperationsInput | string
@@ -331,6 +388,9 @@ export type IncomeDBOrderByRelationAggregateInput = {
 export type IncomeDBCountOrderByAggregateInput = {
   income_id?: Prisma.SortOrder
   amount?: Prisma.SortOrder
+  sender_name?: Prisma.SortOrder
+  payment_note?: Prisma.SortOrder
+  transaction_date?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
   payment_method_id?: Prisma.SortOrder
@@ -343,6 +403,9 @@ export type IncomeDBAvgOrderByAggregateInput = {
 export type IncomeDBMaxOrderByAggregateInput = {
   income_id?: Prisma.SortOrder
   amount?: Prisma.SortOrder
+  sender_name?: Prisma.SortOrder
+  payment_note?: Prisma.SortOrder
+  transaction_date?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
   payment_method_id?: Prisma.SortOrder
@@ -351,6 +414,9 @@ export type IncomeDBMaxOrderByAggregateInput = {
 export type IncomeDBMinOrderByAggregateInput = {
   income_id?: Prisma.SortOrder
   amount?: Prisma.SortOrder
+  sender_name?: Prisma.SortOrder
+  payment_note?: Prisma.SortOrder
+  transaction_date?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
   payment_method_id?: Prisma.SortOrder
@@ -410,9 +476,16 @@ export type IntFieldUpdateOperationsInput = {
   divide?: number
 }
 
+export type NullableStringFieldUpdateOperationsInput = {
+  set?: string | null
+}
+
 export type IncomeDBCreateWithoutPaymentMethodDBInput = {
   income_id?: string
   amount: number
+  sender_name?: string | null
+  payment_note?: string | null
+  transaction_date?: Date | string
   created_at?: Date | string
   updated_at?: Date | string
 }
@@ -420,6 +493,9 @@ export type IncomeDBCreateWithoutPaymentMethodDBInput = {
 export type IncomeDBUncheckedCreateWithoutPaymentMethodDBInput = {
   income_id?: string
   amount: number
+  sender_name?: string | null
+  payment_note?: string | null
+  transaction_date?: Date | string
   created_at?: Date | string
   updated_at?: Date | string
 }
@@ -456,6 +532,9 @@ export type IncomeDBScalarWhereInput = {
   NOT?: Prisma.IncomeDBScalarWhereInput | Prisma.IncomeDBScalarWhereInput[]
   income_id?: Prisma.StringFilter<"IncomeDB"> | string
   amount?: Prisma.IntFilter<"IncomeDB"> | number
+  sender_name?: Prisma.StringNullableFilter<"IncomeDB"> | string | null
+  payment_note?: Prisma.StringNullableFilter<"IncomeDB"> | string | null
+  transaction_date?: Prisma.DateTimeFilter<"IncomeDB"> | Date | string
   created_at?: Prisma.DateTimeFilter<"IncomeDB"> | Date | string
   updated_at?: Prisma.DateTimeFilter<"IncomeDB"> | Date | string
   payment_method_id?: Prisma.StringFilter<"IncomeDB"> | string
@@ -464,6 +543,9 @@ export type IncomeDBScalarWhereInput = {
 export type IncomeDBCreateManyPaymentMethodDBInput = {
   income_id?: string
   amount: number
+  sender_name?: string | null
+  payment_note?: string | null
+  transaction_date?: Date | string
   created_at?: Date | string
   updated_at?: Date | string
 }
@@ -471,6 +553,9 @@ export type IncomeDBCreateManyPaymentMethodDBInput = {
 export type IncomeDBUpdateWithoutPaymentMethodDBInput = {
   income_id?: Prisma.StringFieldUpdateOperationsInput | string
   amount?: Prisma.IntFieldUpdateOperationsInput | number
+  sender_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  payment_note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  transaction_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -478,6 +563,9 @@ export type IncomeDBUpdateWithoutPaymentMethodDBInput = {
 export type IncomeDBUncheckedUpdateWithoutPaymentMethodDBInput = {
   income_id?: Prisma.StringFieldUpdateOperationsInput | string
   amount?: Prisma.IntFieldUpdateOperationsInput | number
+  sender_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  payment_note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  transaction_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -485,6 +573,9 @@ export type IncomeDBUncheckedUpdateWithoutPaymentMethodDBInput = {
 export type IncomeDBUncheckedUpdateManyWithoutPaymentMethodDBInput = {
   income_id?: Prisma.StringFieldUpdateOperationsInput | string
   amount?: Prisma.IntFieldUpdateOperationsInput | number
+  sender_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  payment_note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  transaction_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -494,6 +585,9 @@ export type IncomeDBUncheckedUpdateManyWithoutPaymentMethodDBInput = {
 export type IncomeDBSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   income_id?: boolean
   amount?: boolean
+  sender_name?: boolean
+  payment_note?: boolean
+  transaction_date?: boolean
   created_at?: boolean
   updated_at?: boolean
   payment_method_id?: boolean
@@ -503,6 +597,9 @@ export type IncomeDBSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
 export type IncomeDBSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   income_id?: boolean
   amount?: boolean
+  sender_name?: boolean
+  payment_note?: boolean
+  transaction_date?: boolean
   created_at?: boolean
   updated_at?: boolean
   payment_method_id?: boolean
@@ -512,6 +609,9 @@ export type IncomeDBSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exte
 export type IncomeDBSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   income_id?: boolean
   amount?: boolean
+  sender_name?: boolean
+  payment_note?: boolean
+  transaction_date?: boolean
   created_at?: boolean
   updated_at?: boolean
   payment_method_id?: boolean
@@ -521,12 +621,15 @@ export type IncomeDBSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
 export type IncomeDBSelectScalar = {
   income_id?: boolean
   amount?: boolean
+  sender_name?: boolean
+  payment_note?: boolean
+  transaction_date?: boolean
   created_at?: boolean
   updated_at?: boolean
   payment_method_id?: boolean
 }
 
-export type IncomeDBOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"income_id" | "amount" | "created_at" | "updated_at" | "payment_method_id", ExtArgs["result"]["incomeDB"]>
+export type IncomeDBOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"income_id" | "amount" | "sender_name" | "payment_note" | "transaction_date" | "created_at" | "updated_at" | "payment_method_id", ExtArgs["result"]["incomeDB"]>
 export type IncomeDBInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   PaymentMethodDB?: boolean | Prisma.PaymentMethodDBDefaultArgs<ExtArgs>
 }
@@ -545,6 +648,9 @@ export type $IncomeDBPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     income_id: string
     amount: number
+    sender_name: string | null
+    payment_note: string | null
+    transaction_date: Date
     created_at: Date
     updated_at: Date
     payment_method_id: string
@@ -974,6 +1080,9 @@ export interface Prisma__IncomeDBClient<T, Null = never, ExtArgs extends runtime
 export interface IncomeDBFieldRefs {
   readonly income_id: Prisma.FieldRef<"IncomeDB", 'String'>
   readonly amount: Prisma.FieldRef<"IncomeDB", 'Int'>
+  readonly sender_name: Prisma.FieldRef<"IncomeDB", 'String'>
+  readonly payment_note: Prisma.FieldRef<"IncomeDB", 'String'>
+  readonly transaction_date: Prisma.FieldRef<"IncomeDB", 'DateTime'>
   readonly created_at: Prisma.FieldRef<"IncomeDB", 'DateTime'>
   readonly updated_at: Prisma.FieldRef<"IncomeDB", 'DateTime'>
   readonly payment_method_id: Prisma.FieldRef<"IncomeDB", 'String'>

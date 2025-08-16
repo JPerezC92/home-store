@@ -691,6 +691,9 @@ export type PaymentMethodDBScalarFieldEnum = (typeof PaymentMethodDBScalarFieldE
 export const IncomeDBScalarFieldEnum = {
   income_id: 'income_id',
   amount: 'amount',
+  sender_name: 'sender_name',
+  payment_note: 'payment_note',
+  transaction_date: 'transaction_date',
   created_at: 'created_at',
   updated_at: 'updated_at',
   payment_method_id: 'payment_method_id'
@@ -702,6 +705,7 @@ export type IncomeDBScalarFieldEnum = (typeof IncomeDBScalarFieldEnum)[keyof typ
 export const ExpenseDBScalarFieldEnum = {
   expense_id: 'expense_id',
   amount: 'amount',
+  transaction_date: 'transaction_date',
   created_at: 'created_at',
   updated_at: 'updated_at',
   payment_method_id: 'payment_method_id'
@@ -724,6 +728,14 @@ export const QueryMode = {
 } as const
 
 export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+export const NullsOrder = {
+  first: 'first',
+  last: 'last'
+} as const
+
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
 

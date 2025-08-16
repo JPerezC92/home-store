@@ -16,7 +16,8 @@
 			"!**/dist/",
 			"!**/node_modules/",
 			"!**/.next/**",
-			"!**/.swc/**"
+			"!**/.swc/**",
+			"!**/src/database/infrastructure/prisma/**"
 		]
 	},
 	"formatter": {
@@ -86,7 +87,7 @@
 			"linter": {
 				"rules": {
 					"suspicious": {
-						"noExplicitAny": "off",
+						"noExplicitAny": "on",
 						"useAwait": "error"
 					}
 				}

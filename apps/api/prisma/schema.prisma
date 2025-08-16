@@ -25,6 +25,9 @@ model PaymentMethodDB {
 model IncomeDB {
     income_id         String          @id @default(uuid())
     amount            Int
+    sender_name       String?         @db.VarChar(100) // Name of the person who sent the payment
+    payment_note      String?         @db.Text // Optional note/message with the payment
+    transaction_date  DateTime        @default(now()) // Date when the transaction occurred (from Excel's Fecha Operación)
     created_at        DateTime        @default(now())
     updated_at        DateTime        @updatedAt
     payment_method_id String
@@ -36,6 +39,7 @@ model IncomeDB {
 model ExpenseDB {
     expense_id        String          @id @default(uuid())
     amount            Int
+    transaction_date  DateTime        @default(now()) // Date when the transaction occurred (from Excel's Fecha Operación)
     created_at        DateTime        @default(now())
     updated_at        DateTime        @updatedAt
     payment_method_id String

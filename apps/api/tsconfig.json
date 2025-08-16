@@ -1,8 +1,11 @@
 {
 	"extends": "@hs/typescript-config/nestjs.json",
 	"compilerOptions": {
+		"strict": true,
+		"noImplicitAny": true,
 		"strictNullChecks": true,
 		"strictPropertyInitialization": false,
+		"noUncheckedIndexedAccess": true,
 		"baseUrl": "./",
 		"outDir": "./dist",
 		"paths": {
