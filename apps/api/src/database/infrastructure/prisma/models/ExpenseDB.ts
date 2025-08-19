@@ -36,6 +36,7 @@ export type ExpenseDBSumAggregateOutputType = {
 export type ExpenseDBMinAggregateOutputType = {
   expense_id: string | null
   amount: number | null
+  transaction_date: Date | null
   created_at: Date | null
   updated_at: Date | null
   payment_method_id: string | null
@@ -44,6 +45,7 @@ export type ExpenseDBMinAggregateOutputType = {
 export type ExpenseDBMaxAggregateOutputType = {
   expense_id: string | null
   amount: number | null
+  transaction_date: Date | null
   created_at: Date | null
   updated_at: Date | null
   payment_method_id: string | null
@@ -52,6 +54,7 @@ export type ExpenseDBMaxAggregateOutputType = {
 export type ExpenseDBCountAggregateOutputType = {
   expense_id: number
   amount: number
+  transaction_date: number
   created_at: number
   updated_at: number
   payment_method_id: number
@@ -70,6 +73,7 @@ export type ExpenseDBSumAggregateInputType = {
 export type ExpenseDBMinAggregateInputType = {
   expense_id?: true
   amount?: true
+  transaction_date?: true
   created_at?: true
   updated_at?: true
   payment_method_id?: true
@@ -78,6 +82,7 @@ export type ExpenseDBMinAggregateInputType = {
 export type ExpenseDBMaxAggregateInputType = {
   expense_id?: true
   amount?: true
+  transaction_date?: true
   created_at?: true
   updated_at?: true
   payment_method_id?: true
@@ -86,6 +91,7 @@ export type ExpenseDBMaxAggregateInputType = {
 export type ExpenseDBCountAggregateInputType = {
   expense_id?: true
   amount?: true
+  transaction_date?: true
   created_at?: true
   updated_at?: true
   payment_method_id?: true
@@ -181,6 +187,7 @@ export type ExpenseDBGroupByArgs<ExtArgs extends runtime.Types.Extensions.Intern
 export type ExpenseDBGroupByOutputType = {
   expense_id: string
   amount: number
+  transaction_date: Date
   created_at: Date
   updated_at: Date
   payment_method_id: string
@@ -212,6 +219,7 @@ export type ExpenseDBWhereInput = {
   NOT?: Prisma.ExpenseDBWhereInput | Prisma.ExpenseDBWhereInput[]
   expense_id?: Prisma.StringFilter<"ExpenseDB"> | string
   amount?: Prisma.IntFilter<"ExpenseDB"> | number
+  transaction_date?: Prisma.DateTimeFilter<"ExpenseDB"> | Date | string
   created_at?: Prisma.DateTimeFilter<"ExpenseDB"> | Date | string
   updated_at?: Prisma.DateTimeFilter<"ExpenseDB"> | Date | string
   payment_method_id?: Prisma.StringFilter<"ExpenseDB"> | string
@@ -221,6 +229,7 @@ export type ExpenseDBWhereInput = {
 export type ExpenseDBOrderByWithRelationInput = {
   expense_id?: Prisma.SortOrder
   amount?: Prisma.SortOrder
+  transaction_date?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
   payment_method_id?: Prisma.SortOrder
@@ -233,6 +242,7 @@ export type ExpenseDBWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.ExpenseDBWhereInput[]
   NOT?: Prisma.ExpenseDBWhereInput | Prisma.ExpenseDBWhereInput[]
   amount?: Prisma.IntFilter<"ExpenseDB"> | number
+  transaction_date?: Prisma.DateTimeFilter<"ExpenseDB"> | Date | string
   created_at?: Prisma.DateTimeFilter<"ExpenseDB"> | Date | string
   updated_at?: Prisma.DateTimeFilter<"ExpenseDB"> | Date | string
   payment_method_id?: Prisma.StringFilter<"ExpenseDB"> | string
@@ -242,6 +252,7 @@ export type ExpenseDBWhereUniqueInput = Prisma.AtLeast<{
 export type ExpenseDBOrderByWithAggregationInput = {
   expense_id?: Prisma.SortOrder
   amount?: Prisma.SortOrder
+  transaction_date?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
   payment_method_id?: Prisma.SortOrder
@@ -258,6 +269,7 @@ export type ExpenseDBScalarWhereWithAggregatesInput = {
   NOT?: Prisma.ExpenseDBScalarWhereWithAggregatesInput | Prisma.ExpenseDBScalarWhereWithAggregatesInput[]
   expense_id?: Prisma.StringWithAggregatesFilter<"ExpenseDB"> | string
   amount?: Prisma.IntWithAggregatesFilter<"ExpenseDB"> | number
+  transaction_date?: Prisma.DateTimeWithAggregatesFilter<"ExpenseDB"> | Date | string
   created_at?: Prisma.DateTimeWithAggregatesFilter<"ExpenseDB"> | Date | string
   updated_at?: Prisma.DateTimeWithAggregatesFilter<"ExpenseDB"> | Date | string
   payment_method_id?: Prisma.StringWithAggregatesFilter<"ExpenseDB"> | string
@@ -266,6 +278,7 @@ export type ExpenseDBScalarWhereWithAggregatesInput = {
 export type ExpenseDBCreateInput = {
   expense_id?: string
   amount: number
+  transaction_date?: Date | string
   created_at?: Date | string
   updated_at?: Date | string
   PaymentMethodDB: Prisma.PaymentMethodDBCreateNestedOneWithoutExpenseDBInput
@@ -274,6 +287,7 @@ export type ExpenseDBCreateInput = {
 export type ExpenseDBUncheckedCreateInput = {
   expense_id?: string
   amount: number
+  transaction_date?: Date | string
   created_at?: Date | string
   updated_at?: Date | string
   payment_method_id: string
@@ -282,6 +296,7 @@ export type ExpenseDBUncheckedCreateInput = {
 export type ExpenseDBUpdateInput = {
   expense_id?: Prisma.StringFieldUpdateOperationsInput | string
   amount?: Prisma.IntFieldUpdateOperationsInput | number
+  transaction_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   PaymentMethodDB?: Prisma.PaymentMethodDBUpdateOneRequiredWithoutExpenseDBNestedInput
@@ -290,6 +305,7 @@ export type ExpenseDBUpdateInput = {
 export type ExpenseDBUncheckedUpdateInput = {
   expense_id?: Prisma.StringFieldUpdateOperationsInput | string
   amount?: Prisma.IntFieldUpdateOperationsInput | number
+  transaction_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   payment_method_id?: Prisma.StringFieldUpdateOperationsInput | string
@@ -298,6 +314,7 @@ export type ExpenseDBUncheckedUpdateInput = {
 export type ExpenseDBCreateManyInput = {
   expense_id?: string
   amount: number
+  transaction_date?: Date | string
   created_at?: Date | string
   updated_at?: Date | string
   payment_method_id: string
@@ -306,6 +323,7 @@ export type ExpenseDBCreateManyInput = {
 export type ExpenseDBUpdateManyMutationInput = {
   expense_id?: Prisma.StringFieldUpdateOperationsInput | string
   amount?: Prisma.IntFieldUpdateOperationsInput | number
+  transaction_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -313,6 +331,7 @@ export type ExpenseDBUpdateManyMutationInput = {
 export type ExpenseDBUncheckedUpdateManyInput = {
   expense_id?: Prisma.StringFieldUpdateOperationsInput | string
   amount?: Prisma.IntFieldUpdateOperationsInput | number
+  transaction_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   payment_method_id?: Prisma.StringFieldUpdateOperationsInput | string
@@ -331,6 +350,7 @@ export type ExpenseDBOrderByRelationAggregateInput = {
 export type ExpenseDBCountOrderByAggregateInput = {
   expense_id?: Prisma.SortOrder
   amount?: Prisma.SortOrder
+  transaction_date?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
   payment_method_id?: Prisma.SortOrder
@@ -343,6 +363,7 @@ export type ExpenseDBAvgOrderByAggregateInput = {
 export type ExpenseDBMaxOrderByAggregateInput = {
   expense_id?: Prisma.SortOrder
   amount?: Prisma.SortOrder
+  transaction_date?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
   payment_method_id?: Prisma.SortOrder
@@ -351,6 +372,7 @@ export type ExpenseDBMaxOrderByAggregateInput = {
 export type ExpenseDBMinOrderByAggregateInput = {
   expense_id?: Prisma.SortOrder
   amount?: Prisma.SortOrder
+  transaction_date?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
   payment_method_id?: Prisma.SortOrder
@@ -405,6 +427,7 @@ export type ExpenseDBUncheckedUpdateManyWithoutPaymentMethodDBNestedInput = {
 export type ExpenseDBCreateWithoutPaymentMethodDBInput = {
   expense_id?: string
   amount: number
+  transaction_date?: Date | string
   created_at?: Date | string
   updated_at?: Date | string
 }
@@ -412,6 +435,7 @@ export type ExpenseDBCreateWithoutPaymentMethodDBInput = {
 export type ExpenseDBUncheckedCreateWithoutPaymentMethodDBInput = {
   expense_id?: string
   amount: number
+  transaction_date?: Date | string
   created_at?: Date | string
   updated_at?: Date | string
 }
@@ -448,6 +472,7 @@ export type ExpenseDBScalarWhereInput = {
   NOT?: Prisma.ExpenseDBScalarWhereInput | Prisma.ExpenseDBScalarWhereInput[]
   expense_id?: Prisma.StringFilter<"ExpenseDB"> | string
   amount?: Prisma.IntFilter<"ExpenseDB"> | number
+  transaction_date?: Prisma.DateTimeFilter<"ExpenseDB"> | Date | string
   created_at?: Prisma.DateTimeFilter<"ExpenseDB"> | Date | string
   updated_at?: Prisma.DateTimeFilter<"ExpenseDB"> | Date | string
   payment_method_id?: Prisma.StringFilter<"ExpenseDB"> | string
@@ -456,6 +481,7 @@ export type ExpenseDBScalarWhereInput = {
 export type ExpenseDBCreateManyPaymentMethodDBInput = {
   expense_id?: string
   amount: number
+  transaction_date?: Date | string
   created_at?: Date | string
   updated_at?: Date | string
 }
@@ -463,6 +489,7 @@ export type ExpenseDBCreateManyPaymentMethodDBInput = {
 export type ExpenseDBUpdateWithoutPaymentMethodDBInput = {
   expense_id?: Prisma.StringFieldUpdateOperationsInput | string
   amount?: Prisma.IntFieldUpdateOperationsInput | number
+  transaction_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -470,6 +497,7 @@ export type ExpenseDBUpdateWithoutPaymentMethodDBInput = {
 export type ExpenseDBUncheckedUpdateWithoutPaymentMethodDBInput = {
   expense_id?: Prisma.StringFieldUpdateOperationsInput | string
   amount?: Prisma.IntFieldUpdateOperationsInput | number
+  transaction_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -477,6 +505,7 @@ export type ExpenseDBUncheckedUpdateWithoutPaymentMethodDBInput = {
 export type ExpenseDBUncheckedUpdateManyWithoutPaymentMethodDBInput = {
   expense_id?: Prisma.StringFieldUpdateOperationsInput | string
   amount?: Prisma.IntFieldUpdateOperationsInput | number
+  transaction_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -486,6 +515,7 @@ export type ExpenseDBUncheckedUpdateManyWithoutPaymentMethodDBInput = {
 export type ExpenseDBSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   expense_id?: boolean
   amount?: boolean
+  transaction_date?: boolean
   created_at?: boolean
   updated_at?: boolean
   payment_method_id?: boolean
@@ -495,6 +525,7 @@ export type ExpenseDBSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
 export type ExpenseDBSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   expense_id?: boolean
   amount?: boolean
+  transaction_date?: boolean
   created_at?: boolean
   updated_at?: boolean
   payment_method_id?: boolean
@@ -504,6 +535,7 @@ export type ExpenseDBSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ext
 export type ExpenseDBSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   expense_id?: boolean
   amount?: boolean
+  transaction_date?: boolean
   created_at?: boolean
   updated_at?: boolean
   payment_method_id?: boolean
@@ -513,12 +545,13 @@ export type ExpenseDBSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
 export type ExpenseDBSelectScalar = {
   expense_id?: boolean
   amount?: boolean
+  transaction_date?: boolean
   created_at?: boolean
   updated_at?: boolean
   payment_method_id?: boolean
 }
 
-export type ExpenseDBOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"expense_id" | "amount" | "created_at" | "updated_at" | "payment_method_id", ExtArgs["result"]["expenseDB"]>
+export type ExpenseDBOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"expense_id" | "amount" | "transaction_date" | "created_at" | "updated_at" | "payment_method_id", ExtArgs["result"]["expenseDB"]>
 export type ExpenseDBInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   PaymentMethodDB?: boolean | Prisma.PaymentMethodDBDefaultArgs<ExtArgs>
 }
@@ -537,6 +570,7 @@ export type $ExpenseDBPayload<ExtArgs extends runtime.Types.Extensions.InternalA
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     expense_id: string
     amount: number
+    transaction_date: Date
     created_at: Date
     updated_at: Date
     payment_method_id: string
@@ -966,6 +1000,7 @@ export interface Prisma__ExpenseDBClient<T, Null = never, ExtArgs extends runtim
 export interface ExpenseDBFieldRefs {
   readonly expense_id: Prisma.FieldRef<"ExpenseDB", 'String'>
   readonly amount: Prisma.FieldRef<"ExpenseDB", 'Int'>
+  readonly transaction_date: Prisma.FieldRef<"ExpenseDB", 'DateTime'>
   readonly created_at: Prisma.FieldRef<"ExpenseDB", 'DateTime'>
   readonly updated_at: Prisma.FieldRef<"ExpenseDB", 'DateTime'>
   readonly payment_method_id: Prisma.FieldRef<"ExpenseDB", 'String'>

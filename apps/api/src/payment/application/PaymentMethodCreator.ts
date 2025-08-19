@@ -1,7 +1,7 @@
 import { PaymentRepository } from "../domain/PaymentRepository";
 
+import { PaymentMethodAlreadyExists } from "#payment/domain/errors/PaymentMethodAlreadyExists";
 import { PaymentMethod } from "#payment/domain/PaymentMethod.model";
-import { PaymentMethodAlreadyExists } from "#shared/domain/DomainError";
 
 interface Dependencies {
 	PaymentRepository: PaymentRepository;
@@ -9,18 +9,20 @@ interface Dependencies {
 
 interface Input extends Pick<PaymentMethod, "name" | "active"> {}
 
-export function PaymentMethodCreator({ PaymentRepository }: Dependencies) {
-	return {
-		async execute({ name, active }: Input) {
-			const paymentMethod = await PaymentRepository.findByName(name);
+export class PaymentMethodCreator {
+	constructor(private readonly deps: Dependencies) {}
 
-			if (paymentMethod) {
-				return new PaymentMethodAlreadyExists();
-			}
+	async execute({ name, active }: Input) {
+		const paymentMethod = await this.deps.PaymentRepository.findByName(
+			name
+		);
 
-			return await PaymentRepository.createPaymentMethod(
-				PaymentMethod.create({ name, active })
-			);
-		},
-	};
+		if (paymentMethod) {
+			return new PaymentMethodAlreadyExists();
+		}
+
+		return await this.deps.PaymentRepository.createPaymentMethod(
+			PaymentMethod.create({ name, active })
+		);
+	}
 }

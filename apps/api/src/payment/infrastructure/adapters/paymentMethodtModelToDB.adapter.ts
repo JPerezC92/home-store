@@ -2,7 +2,7 @@ import { PaymentMethod } from "src/payment/domain/PaymentMethod.model";
 
 import { PaymentMethodDB } from "#database/infrastructure/prisma/client";
 
-export function paymentModelToDB(
+export function paymentMethodtModelToDB(
 	paymentMethod: PaymentMethod
 ): PaymentMethodDB {
 	return {
