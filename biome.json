@@ -103,6 +103,15 @@
 			}
 		},
 		{
+			"includes": ["./apps/mobile/**"],
+			"linter": {
+				"enabled": true,
+				"rules": {
+					"recommended": true
+				}
+			}
+		},
+		{
 			"includes": ["./packages/api/**"],
 			"javascript": {
 				"parser": {
