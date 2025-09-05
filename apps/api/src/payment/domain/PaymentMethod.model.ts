@@ -18,6 +18,7 @@ export class PaymentMethod {
 	constructor(props: PaymentMethodProps) {
 		this.paymentMethodId = props.paymentMethodId;
 		this.name = props.name;
+		this.active = props.active;
 		this.createdAt = props.createdAt;
 		this.updatedAt = props.updatedAt;
 	}
