@@ -1,10 +1,5 @@
 {
 	"editor.formatOnSave": true,
-	"editor.defaultFormatter": "biomejs.biome",
-	"editor.codeActionsOnSave": {
-		"source.organizeImports.biome": "explicit",
-		"source.fixAll.biome": "explicit"
-	},
 	"workbench.colorCustomizations": {
 		"tree.inactiveIndentGuidesStroke": "#14dfee4d",
 		"tree.indentGuidesStroke": "#a255ebc7",
@@ -14,7 +9,9 @@
 		}
 	},
 	"workbench.tree.indent": 16,
-	"[prisma]": {
-		"editor.defaultFormatter": "Prisma.prisma"
-	}
+	"eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ]
 }

@@ -1,4 +1,4 @@
-# Home Store
+# Turborepo starter
 
 This is a community-maintained example. If you experience a problem, please submit a pull request with a fix. GitHub Issues will be closed.
 
@@ -12,29 +12,33 @@ npx create-turbo@latest -e with-nestjs
 
 ## What's inside?
 
-This Turborepo includes the following packages/apps:
+This Turborepo includes the following packages & apps:
 
 ### Apps and Packages
 
-    .
-    ├── apps
-    │   ├── api                       # NestJS app (https://nestjs.com).
-    │   └── web                       # Next.js app (https://nextjs.org).
-    └── packages
-        ├── @hs/api                 # Shared `NestJS` resources.
-        ├── @hs/jest-config         # `jest` configurations
-        ├── @hs/typescript-config   # `tsconfig.json`s used throughout the monorepo
-        └── @hs/ui                  # Shareable stub React component library.
+```shell
+.
+├── apps
+│   ├── api                       # NestJS app (https://nestjs.com).
+│   └── web                       # Next.js app (https://nextjs.org).
+└── packages
+    ├── @repo/api                 # Shared `NestJS` resources.
+    ├── @repo/eslint-config       # `eslint` configurations (includes `prettier`)
+    ├── @repo/jest-config         # `jest` configurations
+    ├── @repo/typescript-config   # `tsconfig.json`s used throughout the monorepo
+    └── @repo/ui                  # Shareable stub React component library.
+```
 
-Each package and application are 100% [TypeScript](https://www.typescriptlang.org/) safe.
+Each package and application are mostly written in [TypeScript](https://www.typescriptlang.org/).
 
 ### Utilities
 
 This `Turborepo` has some additional tools already set for you:
 
 - [TypeScript](https://www.typescriptlang.org/) for static type-safety
-- [Biome](https://biomejs.dev/) for code formatting and linting
-- [Jest](https://jestjs.io) & [Playwright](https://playwright.dev/) for testing
+- [ESLint](https://eslint.org/) for code linting
+- [Prettier](https://prettier.io) for code formatting
+- [Jest](https://prettier.io) & [Playwright](https://playwright.dev/) for testing
 
 ### Commands
 
@@ -66,13 +70,14 @@ pnpm run test
 # You can launch e2e testes with `test:e2e`
 pnpm run test:e2e
 
-# See `@hs/jest-config` to customize the behavior.
+# See `@repo/jest-config` to customize the behavior.
 ```
 
 #### Lint
 
 ```bash
 # Will lint all the app & packages with the supported `lint` script.
+# See `@repo/eslint-config` to customize the behavior.
 pnpm run lint
 ```
 
@@ -80,6 +85,7 @@ pnpm run lint
 
 ```bash
 # Will format all the supported `.ts,.js,json,.tsx,.jsx` files.
+# See `@repo/eslint-config/prettier-base.js` to customize the behavior.
 pnpm format
 ```
 
@@ -105,6 +111,8 @@ npx turbo link
 ```
 
 ## Useful Links
+
+This example take some inspiration the [with-nextjs](https://github.com/vercel/turborepo/tree/main/examples/with-nextjs) `Turbo` example and [01-cats-app](https://github.com/nestjs/nest/tree/master/sample/01-cats-app) `NestJs` sample.
 
 Learn more about the power of Turborepo:
 

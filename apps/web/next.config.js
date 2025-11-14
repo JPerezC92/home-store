@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
-	transpilePackages: ['@hs/ui'],
-}
+const nextConfig = {
+  allowedDevOrigins: ['http://localhost:3000'],
+};
+
+export default nextConfig;

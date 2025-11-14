@@ -1,42 +1,43 @@
 {
-	"name": "@hs/api",
-	"version": "0.0.0",
-	"private": true,
-	"license": "MIT",
-	"scripts": {
-		"dev": "pnpm build --watch",
-		"build": "tsc -b -v",
-		"lint": "biome lint ."
-	},
-	"main": "./dist/index.js",
-	"types": "./dist/index.d.ts",
-	"files": ["./dist/**"],
-	"publishConfig": {
-		"access": "public"
-	},
-	"typesVersions": {
-		"*": {
-			"*": ["src/*"]
-		}
-	},
-	"exports": {
-		".": {
-			"import": "./dist/index.js",
-			"require": "./dist/index.js"
-		},
-		"./*": {
-			"import": "./dist/*.js",
-			"require": "./dist/*.js"
-		}
-	},
-	"dependencies": {
-		"@nestjs/mapped-types": "*"
-	},
-	"devDependencies": {
-		"@hs/typescript-config": "workspace:*",
-		"@types/node": "^20.3.1",
-		"ts-loader": "^9.4.3",
-		"ts-node": "^10.9.2",
-		"typescript": "5.5.4"
-	}
+  "name": "@repo/api",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "pnpm build --watch",
+    "build": "tsc -b -v",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\""
+  },
+  "main": "./dist/entry.js",
+  "types": "./dist/entry.d.ts",
+  "files": [
+    "./dist/**"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/entry.js",
+      "require": "./dist/entry.js"
+    },
+    "./*": {
+      "import": "./dist/*.js",
+      "require": "./dist/*.js"
+    }
+  },
+  "dependencies": {
+    "@nestjs/mapped-types": "*",
+    "@repo/database": "workspace:*",
+    "nestjs-zod": "5.0.1",
+    "zod": "4.1.12"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "22.15.3",
+    "ts-loader": "9.4.3",
+    "ts-node": "10.9.2",
+    "typescript": "5.9.2"
+  }
 }

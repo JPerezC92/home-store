@@ -1,8 +1,0 @@
-{
-	"name": "@hs/playwright-config",
-	"version": "0.0.0",
-	"private": true,
-	"exports": {
-		".": "./playwright.config.ts"
-	}
-}

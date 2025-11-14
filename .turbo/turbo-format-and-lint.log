@@ -1,0 +1,68 @@
+
+> home-store@0.0.0 format-and-lint D:\projects\home-store
+> biome check .
+
+apps\api\src\main.ts format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Formatter would have printed the following content:
+  
+     1    │ - import·{·patchNestjsSwagger,·ZodValidationPipe·}·from·"@anatine/zod-nestjs";
+     2    │ - import·{·NestFactory·}·from·"@nestjs/core";
+     3    │ - import·{·DocumentBuilder,·SwaggerModule·}·from·"@nestjs/swagger";
+        1 │ + import·{·patchNestjsSwagger,·ZodValidationPipe·}·from·'@anatine/zod-nestjs'
+        2 │ + import·{·NestFactory·}·from·'@nestjs/core'
+        3 │ + import·{·DocumentBuilder,·SwaggerModule·}·from·'@nestjs/swagger'
+     4  4 │   
+     5    │ - import·{·AppModule·}·from·"./app.module";
+        5 │ + import·{·AppModule·}·from·'./app.module'
+     6  6 │   
+     7  7 │   async function bootstrap() {
+     8    │ - → const·app·=·await·NestFactory.create(AppModule);
+     9    │ - → const·globalPrefix·=·"api";
+        8 │ + → const·app·=·await·NestFactory.create(AppModule)
+        9 │ + → const·globalPrefix·=·'api'
+    10 10 │   
+    11    │ - → app.useGlobalPipes(new·ZodValidationPipe());
+       11 │ + → app.useGlobalPipes(new·ZodValidationPipe())
+    12 12 │   
+    13    │ - → app.setGlobalPrefix(globalPrefix);
+       13 │ + → app.setGlobalPrefix(globalPrefix)
+    14 14 │   
+    15 15 │   	const config = new DocumentBuilder()
+    16    │ - → → .setTitle("Cats·example")
+    17    │ - → → .setDescription("The·cats·API·description")
+    18    │ - → → .setVersion("1.0")
+    19    │ - → → .addTag("cats")
+    20    │ - → → .build();
+       16 │ + → → .setTitle('Cats·example')
+       17 │ + → → .setDescription('The·cats·API·description')
+       18 │ + → → .setVersion('1.0')
+       19 │ + → → .addTag('cats')
+       20 │ + → → .build()
+    21 21 │   
+    22    │ - → patchNestjsSwagger();·//·<---·This·is·the·hacky·patch·using·prototypes·(for·now)
+       22 │ + → patchNestjsSwagger()·//·<---·This·is·the·hacky·patch·using·prototypes·(for·now)
+    23 23 │   
+    24    │ - → const·document·=·SwaggerModule.createDocument(app,·config);
+       24 │ + → const·document·=·SwaggerModule.createDocument(app,·config)
+    25 25 │   
+    26    │ - → SwaggerModule.setup("docs",·app,·document);
+       26 │ + → SwaggerModule.setup('docs',·app,·document)
+    27 27 │   
+    28    │ - → await·app.listen(3000);
+       28 │ + → await·app.listen(3000)
+    29 29 │   }
+    30 30 │   
+Checked 83 files in 14ms. No fixes applied.
+Found 1 error.
+    31    │ - bootstrap();
+       31 │ + bootstrap()
+    32 32 │   
+  
+
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.
+  
+
+ ELIFECYCLE  Command failed with exit code 1.

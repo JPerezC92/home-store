@@ -1,17 +1,14 @@
 {
-	"extends": "@hs/typescript-config/nestjs.json",
-	"compilerOptions": {
-		"strict": true,
-		"noImplicitAny": true,
-		"strictNullChecks": true,
-		"strictPropertyInitialization": false,
-		"noUncheckedIndexedAccess": true,
-		"baseUrl": "./",
-		"outDir": "./dist",
-		"paths": {
-			"#payment/*": ["./src/payment/*"],
-			"#database/*": ["./src/database/*"],
-			"#shared/*": ["./src/shared/*"]
-		}
-	}
+  "extends": "@repo/typescript-config/nestjs.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "paths": {
+      "@tasks/*": ["src/tasks/*"],
+      "@links/*": ["src/links/*"],
+      "@database/*": ["src/database/*"],
+      "@common/*": ["src/common/*"],
+      "@src/*": ["src/*"]
+    }
+  }
 }
