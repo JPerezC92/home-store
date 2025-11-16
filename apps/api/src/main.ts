@@ -1,28 +1,27 @@
 import { NestFactory } from "@nestjs/core";
-import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
+import { SwaggerModule, DocumentBuilder } from "@nestjs/swagger";
+import { cleanupOpenApiDoc } from "nestjs-zod";
 
 import { AppModule } from "./app.module";
-import { ClassValidatorPipe } from "./shared/infrastructure/pipes/classValidator.pipe";
 
 async function bootstrap() {
 	const app = await NestFactory.create(AppModule);
-	const globalPrefix = "api";
+	app.enableCors();
 
-	app.useGlobalPipes(new ClassValidatorPipe());
-	app.setGlobalPrefix(globalPrefix);
-
+	// Swagger Configuration
 	const config = new DocumentBuilder()
-		.setTitle("Cats example")
-		.setDescription("The cats API description")
+		.setTitle("Home Store API")
+		.setDescription("Task management API")
 		.setVersion("1.0")
-		.addTag("cats")
+		.addTag("tasks")
 		.build();
 
 	const document = SwaggerModule.createDocument(app, config);
-
-	SwaggerModule.setup("docs", app, document);
+	SwaggerModule.setup("api", app, cleanupOpenApiDoc(document));
 
 	await app.listen(3000);
+	console.log(`🚀 Application is running on: http://localhost:3000`);
+	console.log(`📚 Swagger API docs available at: http://localhost:3000/api`);
 }
 
-bootstrap();
+void bootstrap();

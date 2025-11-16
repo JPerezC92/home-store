@@ -1,5 +1,0 @@
--- AlterTable
-ALTER TABLE "expense" ADD COLUMN     "transaction_date" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP;
-
--- AlterTable
-ALTER TABLE "income" ADD COLUMN     "transaction_date" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP;

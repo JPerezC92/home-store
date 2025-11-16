@@ -2,12 +2,11 @@ import { Module } from "@nestjs/common";
 
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
-import { DatabaseModule } from "./database/infrastructure/database.module";
-import { LinksModule } from "./links/links.module";
-import { PaymentModule } from './payment/infrastructure/payment.module';
+import { DatabaseModule } from "./database/infrastructure/drizzle-database.module";
+import { TasksModule } from "./tasks/infrastructure/tasks.module";
 
 @Module({
-	imports: [LinksModule, DatabaseModule, PaymentModule],
+	imports: [DatabaseModule, TasksModule],
 	controllers: [AppController],
 	providers: [AppService],
 })

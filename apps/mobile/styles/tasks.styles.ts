@@ -1,0 +1,296 @@
+import { StyleSheet } from 'react-native';
+
+export const taskStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  statsContainer: {
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+  },
+  statsGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 12,
+  },
+  statCard: {
+    flex: 1,
+    minWidth: '45%',
+    padding: 16,
+    borderRadius: 12,
+    borderWidth: 1,
+  },
+  statLabel: {
+    fontSize: 11,
+    fontWeight: '600',
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+    marginBottom: 8,
+    opacity: 0.7,
+  },
+  statValue: {
+    fontSize: 32,
+    fontWeight: 'bold',
+  },
+  searchContainer: {
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+  },
+  searchInput: {
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    borderRadius: 8,
+    borderWidth: 1,
+    fontSize: 16,
+  },
+  filterContainer: {
+    flexDirection: 'row',
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    gap: 8,
+  },
+  filterButton: {
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 16,
+    borderWidth: 1,
+  },
+  filterButtonActive: {
+    backgroundColor: 'rgba(34, 211, 238, 0.2)',
+    borderColor: 'rgba(34, 211, 238, 0.4)',
+  },
+  filterButtonText: {
+    fontSize: 13,
+    fontWeight: '500',
+  },
+  taskList: {
+    flex: 1,
+    paddingHorizontal: 16,
+  },
+  taskItem: {
+    paddingVertical: 16,
+    paddingHorizontal: 16,
+    borderRadius: 12,
+    borderWidth: 1,
+    marginBottom: 12,
+  },
+  taskContent: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: 12,
+  },
+  checkbox: {
+    width: 24,
+    height: 24,
+    borderRadius: 6,
+    borderWidth: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 2,
+  },
+  checkboxChecked: {
+    backgroundColor: 'rgba(34, 211, 238, 0.2)',
+    borderColor: '#22d3ee',
+  },
+  taskDetails: {
+    flex: 1,
+  },
+  taskHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginBottom: 8,
+  },
+  taskTitle: {
+    fontSize: 18,
+    fontWeight: '600',
+    flex: 1,
+    marginRight: 8,
+  },
+  taskTitleCompleted: {
+    textDecorationLine: 'line-through',
+    opacity: 0.6,
+  },
+  priorityBadge: {
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 8,
+    borderWidth: 1,
+  },
+  priorityText: {
+    fontSize: 11,
+    fontWeight: '600',
+    textTransform: 'uppercase',
+  },
+  taskDescription: {
+    fontSize: 14,
+    lineHeight: 20,
+    marginBottom: 12,
+  },
+  taskFooter: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 12,
+    paddingTop: 12,
+    borderTopWidth: 1,
+  },
+  taskMeta: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  taskDate: {
+    fontSize: 13,
+    opacity: 0.7,
+  },
+  statusBadge: {
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 8,
+    borderWidth: 1,
+  },
+  statusText: {
+    fontSize: 11,
+    fontWeight: '600',
+  },
+  deleteButton: {
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 8,
+    borderWidth: 1,
+    backgroundColor: 'rgba(239, 68, 68, 0.2)',
+    borderColor: 'rgba(239, 68, 68, 0.4)',
+  },
+  deleteButtonText: {
+    color: '#ef4444',
+    fontSize: 13,
+    fontWeight: '600',
+  },
+  emptyState: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 60,
+    paddingHorizontal: 32,
+  },
+  emptyStateIcon: {
+    fontSize: 72,
+    marginBottom: 16,
+  },
+  emptyStateTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 8,
+    textAlign: 'center',
+  },
+  emptyStateText: {
+    fontSize: 14,
+    textAlign: 'center',
+    opacity: 0.7,
+  },
+  fab: {
+    position: 'absolute',
+    right: 20,
+    bottom: 20,
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: '#22d3ee',
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 8,
+  },
+  fabText: {
+    color: '#000',
+    fontSize: 32,
+    fontWeight: '300',
+  },
+  modalContainer: {
+    flex: 1,
+    padding: 24,
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 24,
+  },
+  modalTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+  closeButton: {
+    padding: 8,
+  },
+  closeButtonText: {
+    fontSize: 24,
+    opacity: 0.7,
+  },
+  formGroup: {
+    marginBottom: 20,
+  },
+  label: {
+    fontSize: 14,
+    fontWeight: '600',
+    marginBottom: 8,
+    opacity: 0.7,
+  },
+  input: {
+    paddingHorizontal: 16,
+    paddingVertical: 14,
+    borderRadius: 8,
+    borderWidth: 1,
+    fontSize: 16,
+  },
+  textArea: {
+    minHeight: 100,
+    textAlignVertical: 'top',
+  },
+  priorityButtons: {
+    flexDirection: 'row',
+    gap: 8,
+  },
+  priorityButton: {
+    flex: 1,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    borderRadius: 8,
+    borderWidth: 2,
+    alignItems: 'center',
+  },
+  priorityButtonActive: {
+    borderWidth: 2,
+  },
+  priorityButtonText: {
+    fontSize: 14,
+    fontWeight: '600',
+  },
+  submitButton: {
+    backgroundColor: '#22d3ee',
+    paddingVertical: 16,
+    borderRadius: 8,
+    alignItems: 'center',
+    marginTop: 8,
+  },
+  submitButtonText: {
+    color: '#000',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 32,
+  },
+  loadingText: {
+    marginTop: 16,
+    fontSize: 16,
+    opacity: 0.7,
+  },
+});
