@@ -13,6 +13,7 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "test:e2e": "cross-env DATABASE_URL=:memory: vitest run --config ./vitest.config.e2e.ts",
+    "test:excel": "ts-node scripts/test-excel-parser.ts",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "dotenv -e .env -- drizzle-kit migrate",
@@ -32,6 +33,7 @@
     "nestjs-zod": "5.0.1",
     "reflect-metadata": "0.2.0",
     "rxjs": "7.8.1",
+    "xlsx": "0.18.5",
     "zod": "4.1.12"
   },
   "devDependencies": {
@@ -43,6 +45,7 @@
     "@repo/typescript-config": "workspace:*",
     "@repo/vitest-config": "workspace:*",
     "@types/express": "4.17.17",
+    "@types/multer": "2.0.0",
     "@types/node": "22.15.3",
     "@types/supertest": "6.0.0",
     "@vitest/coverage-v8": "4.0.8",

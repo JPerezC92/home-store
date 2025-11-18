@@ -1,45 +1,70 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Light mode - not used but kept for completeness */
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  /* Soft & Warm Light Theme - Default */
+  /* Backgrounds: Off-white/cream tones for warmth */
+  --background: oklch(0.985 0.002 85); /* #FAFAF9 - Warm off-white background */
+  --foreground: oklch(0.25 0.005 60); /* #1C1917 - Warm dark gray text */
+
+  /* Cards: Pure white with subtle warmth */
+  --card: oklch(1 0.001 85); /* #FFFFFF - White cards */
+  --card-foreground: oklch(0.3 0.005 60); /* #292524 - Warm dark text */
+
+  /* Popovers: Same as cards */
+  --popover: oklch(1 0.001 85);
+  --popover-foreground: oklch(0.3 0.005 60);
+
+  /* Primary: Your signature cyan for actions */
+  --primary: oklch(0.65 0.18 180); /* Use JPC signature cyan */
+  --primary-foreground: oklch(0.99 0.001 85); /* Near white */
+
+  /* Secondary: Warm light gray */
+  --secondary: oklch(0.96 0.003 85); /* #F5F5F4 - Warm light gray */
+  --secondary-foreground: oklch(0.25 0.005 60); /* Warm dark text */
+
+  /* Muted: Subtle mint tint */
+  --muted: oklch(0.95 0.01 200); /* Very subtle mint background */
+  --muted-foreground: oklch(0.5 0.005 60); /* #78716C - Medium gray text */
+
+  /* Accent: Sky blue for interactive elements */
+  --accent: var(--color-jpc-sky-400); /* Use JPC sky blue */
+  --accent-foreground: oklch(0.99 0.001 85); /* Near white */
+
+  /* Destructive: Hot pink for errors/delete actions */
+  --destructive: var(--color-jpc-pink-500); /* Use JPC pink */
+  --destructive-foreground: oklch(0.99 0.001 85); /* Near white */
+
+  /* Borders: Subtle warm gray borders */
+  --border: oklch(0.9 0.003 85); /* #E7E5E4 - Light warm border */
+  --input: oklch(0.9 0.003 85); /* Same as border */
+
+  /* Focus ring: Cyan signature color */
+  --ring: var(--color-jpc-cyan-400); /* Use JPC signature cyan */
+
+  /* Chart colors: Use JPC vibrant palette */
+  --chart-1: var(--color-jpc-purple-400); /* Purple */
+  --chart-2: var(--color-jpc-cyan-400); /* Cyan */
+  --chart-3: var(--color-jpc-emerald-400); /* Emerald */
+  --chart-4: var(--color-jpc-pink-400); /* Pink */
+  --chart-5: var(--color-jpc-orange-400); /* Orange */
+
+  /* Border radius */
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+
+  /* Sidebar: Warm light tones with JPC colors */
+  --sidebar: oklch(0.96 0.01 200); /* Near white */
+  --sidebar-foreground: oklch(0.12 0 0); /* Warm dark text */
+  --sidebar-primary: oklch(0.65 0.18 180); /* Use JPC signature cyan */
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.96 0.003 85); /* Light gray accent */
+  --sidebar-accent-foreground: oklch(0.25 0.005 60);
+  --sidebar-border: oklch(0.90 0.02 200); /* Light warm border */
+  --sidebar-ring: var(--color-jpc-cyan-400); /* Use JPC signature cyan */
 }
 
-/* Updated dark mode theme for modern enterprise dashboard */
+/* Dark mode theme - Uses JPC colors for consistency */
 .dark {
   --background: oklch(0.08 0 0);
   --foreground: oklch(0.98 0.001 0);
@@ -47,37 +72,46 @@
   --card-foreground: oklch(0.96 0.001 0);
   --popover: oklch(0.13 0.001 0);
   --popover-foreground: oklch(0.96 0.001 0);
-  --primary: oklch(0.4 0.05 199);
+
+  /* Use JPC colors for primary/accent */
+  --primary: oklch(0.65 0.18 180);
   --primary-foreground: oklch(0.98 0.001 0);
   --secondary: oklch(0.2 0.001 0);
   --secondary-foreground: oklch(0.95 0.001 0);
   --muted: oklch(0.18 0.001 0);
   --muted-foreground: oklch(0.6 0.001 0);
-  --accent: oklch(0.5 0.1 199);
+  --accent: var(--color-jpc-sky-400);
   --accent-foreground: oklch(0.98 0.001 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
+
+  /* Use JPC pink for destructive */
+  --destructive: var(--color-jpc-pink-400);
+  --destructive-foreground: oklch(0.98 0.001 0);
+
   --border: oklch(0.15 0.001 0);
   --input: oklch(0.15 0.001 0);
-  --ring: oklch(0.5 0.1 199);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
+  --ring: var(--color-jpc-cyan-400);
+
+  /* Use JPC colors for charts */
+  --chart-1: var(--color-jpc-purple-400);
+  --chart-2: var(--color-jpc-cyan-400);
+  --chart-3: var(--color-jpc-emerald-400);
+  --chart-4: var(--color-jpc-pink-400);
+  --chart-5: var(--color-jpc-orange-400);
+
+  /* Use JPC cyan for sidebar */
   --sidebar: oklch(0.12 0.001 0);
   --sidebar-foreground: oklch(0.96 0.001 0);
-  --sidebar-primary: oklch(0.5 0.1 199);
+  --sidebar-primary: var(--color-jpc-cyan-400);
   --sidebar-primary-foreground: oklch(0.98 0.001 0);
   --sidebar-accent: oklch(0.2 0.001 0);
   --sidebar-accent-foreground: oklch(0.96 0.001 0);
   --sidebar-border: oklch(0.15 0.001 0);
-  --sidebar-ring: oklch(0.5 0.1 199);
+  --sidebar-ring: var(--color-jpc-cyan-400);
 }
 
 @theme inline {
-  --font-sans: "Geist", "Geist Fallback";
-  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -116,32 +150,127 @@
   --color-sidebar-ring: var(--sidebar-ring);
 
   /* ═══════════════════════════════════════════════════════════════════
-   * JPC VIBRANT COLOR PALETTE - Modern Design System
+   * JPC COLOR PALETTE - Modern Design System (Light Theme)
    * ═══════════════════════════════════════════════════════════════════
    * Personal Design System by Juan Perez Castro
-   * Reference: File Imports page (http://localhost:3001/imports)
+   * Vibrant, energetic colors on warm light backgrounds
    *
-   * Key Principle: Use -400 variants for maximum vibrancy on dark backgrounds
-   * - Text & Icons: Use -400 variants (vibrant!)
-   * - Backgrounds: Use -500 with low opacity (/5, /10, /20)
-   * - Borders: Use -500 with medium opacity (/20, /40, /50)
+   * Color System:
+   * - Cyan: Primary color - Your signature mint-cyan for main actions
+   * - Sky Blue: Secondary color - Links, metadata, loading states
+   * - Emerald: Success color - Positive indicators, completed states
+   * - Orange: Warning color - Alerts, error counts, warnings
+   * - Purple: Special color - Priority items, special stats
+   * - Pink: Accent color - CTAs, important highlights, featured items
+   *
+   * Key Principle: Use -400 variants for maximum vibrancy on light backgrounds
+   * - Text & Icons: Use -400 variants (bright & energetic!)
+   * - Backgrounds: Use -500 with low opacity (/10, /20, /30)
+   * - Borders: Use -500 with medium opacity (/30, /50, /70)
+   *
+   * Full Tailwind-style color palettes with shade range (50-950):
+   * - Light shades (50-300): Backgrounds, subtle accents
+   * - Medium shades (400-600): Primary UI elements, text
+   * - Dark shades (700-950): Strong emphasis, dark text, borders
    */
 
-  /* Primary: Cyan - Total counts, main stats, processing states, primary actions */
-  --color-jpc-vibrant-cyan-400: #22d3ee;  /* Main vibrant cyan - for text & icons */
-  --color-jpc-vibrant-cyan-500: #06b6d4;  /* For backgrounds with opacity */
+  /* ─────────────────────────────────────────────────────────────────
+   * Cyan Palette (Mint-Cyan/Turquoise) - Your Signature Color
+   * Based on oklch(0.85 0.14 175)
+   * ───────────────────────────────────────────────────────────────── */
+  --color-jpc-cyan-50: oklch(0.98 0.02 175); /* Very light mint */
+  --color-jpc-cyan-100: oklch(0.95 0.05 175); /* Light mint */
+  --color-jpc-cyan-200: oklch(0.9 0.1 175); /* Soft mint */
+  --color-jpc-cyan-300: oklch(0.88 0.12 175); /* Medium light mint */
+  --color-jpc-cyan-400: oklch(
+    0.85 0.14 175
+  ); /* PRIMARY - Your signature color! */
+  --color-jpc-cyan-500: oklch(0.75 0.12 175); /* Medium */
+  --color-jpc-cyan-600: oklch(0.65 0.1 175);
+  --color-jpc-cyan-700: oklch(0.55 0.08 175); /* Dark */
+  --color-jpc-cyan-800: oklch(0.4 0.06 175); /* Very dark */
+  --color-jpc-cyan-900: oklch(0.28 0.04 175); /* Almost black */
+  --color-jpc-cyan-950: oklch(0.15 0.02 175); /* Deepest */
 
-  /* Success: Emerald - Success states, completed counts, positive indicators */
-  --color-jpc-vibrant-emerald-400: #34d399; /* Main vibrant green - for text & icons */
-  --color-jpc-vibrant-emerald-500: #10b981; /* For backgrounds with opacity */
+  /* ─────────────────────────────────────────────────────────────────
+   * Sky Blue Palette - Secondary/Info Color
+   * Based on oklch(0.82 0.15 210)
+   * ───────────────────────────────────────────────────────────────── */
+  --color-jpc-sky-50: oklch(0.98 0.02 210); /* Very light sky */
+  --color-jpc-sky-100: oklch(0.95 0.05 210); /* Light sky */
+  --color-jpc-sky-200: oklch(0.9 0.1 210); /* Soft sky */
+  --color-jpc-sky-300: oklch(0.85 0.12 210); /* Medium light sky */
+  --color-jpc-sky-400: oklch(0.82 0.15 210); /* PRIMARY - Bright sky blue! */
+  --color-jpc-sky-500: oklch(0.7 0.14 210); /* Medium */
+  --color-jpc-sky-600: oklch(0.6 0.12 210); /* Medium dark */
+  --color-jpc-sky-700: oklch(0.5 0.1 210); /* Dark */
+  --color-jpc-sky-800: oklch(0.38 0.08 210); /* Very dark */
+  --color-jpc-sky-900: oklch(0.3 0.06 210); /* Almost black */
+  --color-jpc-sky-950: oklch(0.18 0.03 210); /* Deepest */
 
-  /* Warning: Orange - Error counts, warnings, failed states, alerts */
-  --color-jpc-vibrant-orange-400: #fb923c; /* Main vibrant orange - for text & icons */
-  --color-jpc-vibrant-orange-500: #f97316; /* For backgrounds with opacity */
+  /* ─────────────────────────────────────────────────────────────────
+   * Emerald Palette - Success/Positive Color
+   * Based on oklch(0.80 0.16 160)
+   * ───────────────────────────────────────────────────────────────── */
+  --color-jpc-emerald-50: oklch(0.98 0.02 160); /* Very light mint green */
+  --color-jpc-emerald-100: oklch(0.95 0.05 160); /* Light mint green */
+  --color-jpc-emerald-200: oklch(0.9 0.1 160); /* Soft mint green */
+  --color-jpc-emerald-300: oklch(0.85 0.13 160); /* Medium light mint green */
+  --color-jpc-emerald-400: oklch(0.8 0.16 160);
+  --color-jpc-emerald-500: oklch(0.68 0.17 160);
+  --color-jpc-emerald-600: oklch(0.58 0.13 160);
+  --color-jpc-emerald-700: oklch(0.48 0.11 160); /* Dark */
+  --color-jpc-emerald-800: oklch(0.38 0.09 160); /* Very dark */
+  --color-jpc-emerald-900: oklch(0.3 0.07 160); /* Almost black */
+  --color-jpc-emerald-950: oklch(0.18 0.04 160); /* Deepest */
 
-  /* Secondary: Purple - Special stats, Request tags, secondary elements */
-  --color-jpc-vibrant-purple-400: #c084fc; /* Main vibrant purple - for text & icons */
-  --color-jpc-vibrant-purple-500: #a855f7; /* For backgrounds with opacity */
+  /* ─────────────────────────────────────────────────────────────────
+   * Orange Palette - Warning/Alert Color
+   * Based on oklch(0.68 0.21 35) - #fe5c1b (Fiery Coral-Orange)
+   * ───────────────────────────────────────────────────────────────── */
+  --color-jpc-orange-50: oklch(0.98 0.03 35); /* Very light peachy */
+  --color-jpc-orange-100: oklch(0.95 0.06 35); /* Light coral */
+  --color-jpc-orange-200: oklch(0.9 0.12 35); /* Soft orange */
+  --color-jpc-orange-300: oklch(0.8 0.17 35); /* Medium light orange */
+  --color-jpc-orange-400: oklch(0.64 0.22 35);
+  --color-jpc-orange-500: oklch(0.6 0.19 35);
+  --color-jpc-orange-600: oklch(0.52 0.17 35); /* Medium dark */
+  --color-jpc-orange-700: oklch(0.44 0.15 35); /* Dark */
+  --color-jpc-orange-800: oklch(0.36 0.13 35); /* Very dark */
+  --color-jpc-orange-900: oklch(0.28 0.1 35); /* Almost black */
+  --color-jpc-orange-950: oklch(0.18 0.07 35); /* Deepest */
+
+  /* ─────────────────────────────────────────────────────────────────
+   * Purple Palette - Special/Priority Color
+   * Based on oklch(0.76 0.20 300)
+   * ───────────────────────────────────────────────────────────────── */
+  --color-jpc-purple-50: oklch(0.98 0.02 300); /* Very light lavender */
+  --color-jpc-purple-100: oklch(0.95 0.06 300); /* Light lavender */
+  --color-jpc-purple-200: oklch(0.9 0.12 300); /* Soft purple */
+  --color-jpc-purple-300: oklch(0.83 0.16 300); /* Medium light purple */
+  --color-jpc-purple-400: oklch(0.76 0.2 300); /* PRIMARY - Bright purple! */
+  --color-jpc-purple-500: oklch(0.67 0.23 295); /* Medium */
+  --color-jpc-purple-600: oklch(0.58 0.24 290); /* Medium dark */
+  --color-jpc-purple-700: oklch(0.5 0.22 285); /* Dark */
+  --color-jpc-purple-800: oklch(0.42 0.2 285); /* Very dark */
+  --color-jpc-purple-900: oklch(0.35 0.17 285); /* Almost black */
+  --color-jpc-purple-950: oklch(0.25 0.12 285); /* Deepest */
+
+  /* ─────────────────────────────────────────────────────────────────
+   * Pink Palette (Hot Pink/Fuchsia) - Accent/CTA Color
+   * Based on oklch(0.72 0.28 320)
+   * ───────────────────────────────────────────────────────────────── */
+  --color-jpc-pink-50: oklch(0.98 0.03 320); /* Very light pink */
+  --color-jpc-pink-100: oklch(0.95 0.08 320); /* Light pink */
+  --color-jpc-pink-200: oklch(0.9 0.15 320); /* Soft pink */
+  --color-jpc-pink-300: oklch(0.82 0.21 320); /* Medium light pink */
+  --color-jpc-pink-400: oklch(0.72 0.28 320); /* PRIMARY - Hot pink/fuchsia! */
+  --color-jpc-pink-500: oklch(0.65 0.26 350); /* Medium */
+  --color-jpc-pink-600: oklch(0.56 0.28 350); /* Medium dark */
+  --color-jpc-pink-700: oklch(0.48 0.26 350); /* Dark */
+  --color-jpc-pink-800: oklch(0.4 0.23 350); /* Very dark */
+  --color-jpc-pink-900: oklch(0.35 0.2 350); /* Almost black */
+  --color-jpc-pink-950: oklch(0.25 0.15 350); /* Deepest */
 
   /* ═══════════════════════════════════════════════════════════════════
    * ⚠️ DEPRECATED - Old JPC Color Palette (Pre-Vibrant Style)
@@ -162,69 +291,69 @@
    */
 
   /* Old JPC Cyan Palette - DEPRECATED */
-  --color-jpc-50: #e6fffe;
+  /* --color-jpc-50: #e6fffe;
   --color-jpc-100: #ccfffc;
   --color-jpc-200: #99fff9;
   --color-jpc-300: #66fff7;
-  --color-jpc-400: #32E6C7; /* Old primary cyan - NOW USE jpc-vibrant-cyan-400 */
+  --color-jpc-400: #32e6c7;
   --color-jpc-500: #2bc4a9;
   --color-jpc-600: #22a28c;
   --color-jpc-700: #1a7f6e;
   --color-jpc-800: #115c51;
-  --color-jpc-900: #007260; /* Old dark teal */
-  --color-jpc-950: #004035;
+  --color-jpc-900: #007260;
+  --color-jpc-950: #004035; */
 
   /* Old JPC Purple Palette - DEPRECATED */
-  --color-jpc-purple-50: #f5e6ff;
+  /* --color-jpc-purple-50: #f5e6ff;
   --color-jpc-purple-100: #ebccff;
   --color-jpc-purple-200: #d799ff;
   --color-jpc-purple-300: #c366ff;
   --color-jpc-purple-400: #af33ff;
-  --color-jpc-purple-500: #A43FD9; /* Old primary purple - NOW USE jpc-vibrant-purple-400 */
+  --color-jpc-purple-500: #a43fd9;
   --color-jpc-purple-600: #8933b3;
   --color-jpc-purple-700: #6e268c;
   --color-jpc-purple-800: #531a66;
-  --color-jpc-purple-900: #2F0B43; /* Old dark purple header */
-  --color-jpc-purple-950: #1a0626;
+  --color-jpc-purple-900: #2f0b43;
+  --color-jpc-purple-950: #1a0626; */
 
   /* Old JPC Orange Palette - DEPRECATED */
-  --color-jpc-orange-50: #fff3e6;
+  /* --color-jpc-orange-50: #fff3e6;
   --color-jpc-orange-100: #ffe7cc;
   --color-jpc-orange-200: #ffcf99;
   --color-jpc-orange-300: #ffb766;
   --color-jpc-orange-400: #ff9f33;
-  --color-jpc-orange-500: #E54302; /* Old primary orange - NOW USE jpc-vibrant-orange-400 */
+  --color-jpc-orange-500: #e54302;
   --color-jpc-orange-600: #cc3c02;
   --color-jpc-orange-700: #b33501;
   --color-jpc-orange-800: #992e01;
   --color-jpc-orange-900: #802701;
-  --color-jpc-orange-950: #661f01;
+  --color-jpc-orange-950: #661f01; */
 
   /* Old JPC Background Palette - DEPRECATED */
-  --color-jpc-bg-50: #e6ebf0;
+  /* --color-jpc-bg-50: #e6ebf0;
   --color-jpc-bg-100: #ccd7e1;
   --color-jpc-bg-200: #99afc3;
   --color-jpc-bg-300: #6687a5;
   --color-jpc-bg-400: #335f87;
-  --color-jpc-bg-500: #001a2e; /* Old mid-dark background - NOW USE --background */
+  --color-jpc-bg-500: #001a2e;
   --color-jpc-bg-600: #001729;
   --color-jpc-bg-700: #001324;
   --color-jpc-bg-800: #000f1f;
-  --color-jpc-bg-900: #000813; /* Old dark background - NOW USE --background or --card */
-  --color-jpc-bg-950: #000510;
+  --color-jpc-bg-900: #000813;
+  --color-jpc-bg-950: #000510; */
 
   /* Old JPC Gold Palette - DEPRECATED */
-  --color-jpc-gold-50: #fdfbf7;
+  /* --color-jpc-gold-50: #fdfbf7;
   --color-jpc-gold-100: #faf7ef;
   --color-jpc-gold-200: #f5efdf;
   --color-jpc-gold-300: #f0e7cf;
   --color-jpc-gold-400: #ebdfbf;
-  --color-jpc-gold-500: #E9D8A5; /* Old primary gold text - NOW USE --foreground or --muted-foreground */
+  --color-jpc-gold-500: #e9d8a5;
   --color-jpc-gold-600: #d4be80;
   --color-jpc-gold-700: #bfa45b;
   --color-jpc-gold-800: #aa8a36;
   --color-jpc-gold-900: #957011;
-  --color-jpc-gold-950: #6a4f0b;
+  --color-jpc-gold-950: #6a4f0b; */
 }
 
 @layer base {
@@ -235,4 +364,3 @@
     @apply bg-background text-foreground;
   }
 }
-

@@ -6,6 +6,15 @@ export type { Database } from './config';
 export { tasks } from './schemas/tasks.schema';
 export type { DbTask, NewDbTask } from './schemas/tasks.schema';
 
+// Transaction schema and Drizzle types
+export { transactions, uploadHistory } from './schemas/transactions.schema';
+export type {
+  DbTransaction,
+  NewDbTransaction,
+  DbUploadHistory,
+  NewDbUploadHistory,
+} from './schemas/transactions.schema';
+
 // Test utilities
 export {
   createTestDatabase,

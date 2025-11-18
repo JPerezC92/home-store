@@ -13,6 +13,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { Task } from '@repo/api';
 import { taskStyles } from '../../styles/tasks.styles';
 import { StatisticsCard } from '../../components/tasks/statistics-card';
+import { ThemeToggle } from '../../components/theme-toggle';
 import { useColorScheme } from '../../hooks/use-color-scheme';
 import * as tasksApi from '../../services/tasks-api.service';
 import {
@@ -138,6 +139,11 @@ export default function TasksScreen() {
           <StatisticsCard label="Pending" value={stats.pending} color="#fb923c" />
           <StatisticsCard label="High Priority" value={stats.highPriority} color="#c084fc" />
         </View>
+      </View>
+
+      {/* Theme Toggle */}
+      <View style={{ paddingHorizontal: 16 }}>
+        <ThemeToggle />
       </View>
 
       {/* Search */}
