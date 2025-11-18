@@ -17,7 +17,16 @@
       "Bash(pnpm test:*)",
       "Bash(npm run build:*)",
       "Bash(pnpm db:push:*)",
-      "Bash(pnpm dev:*)"
+      "Bash(pnpm dev:*)",
+      "Bash(curl:*)",
+      "mcp__chrome-devtools__list_console_messages",
+      "mcp__chrome-devtools__upload_file",
+      "mcp__chrome-devtools__list_pages",
+      "mcp__chrome-devtools__list_network_requests",
+      "mcp__chrome-devtools__get_network_request",
+      "mcp__chrome-devtools__new_page",
+      "mcp__chrome-devtools__select_page",
+      "mcp__chrome-devtools__click"
     ],
     "deny": [],
     "ask": []
